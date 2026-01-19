@@ -1,9 +1,9 @@
 import Image from "next/image";
-import Link from "next/link";
-import { ArrowsIcon } from "./icons/ArrowsIcon";
 import { PlayIcon } from "./icons/PlayIcon";
 import { STATS } from "@/constants/status";
 import { HERO_CONTENT } from "@/constants/heroContent";
+import Button from "@/components/ui/Button";
+import { ArrowsIcon } from "./icons/ArrowsIcon";
 
 export default function HeroSection({ children }: { children: React.ReactNode }) {
   return (
@@ -40,10 +40,9 @@ export default function HeroSection({ children }: { children: React.ReactNode })
             <p className=" lg:max-w-6xl text-sm lg:text-[24px] ">
               {HERO_CONTENT.description}
             </p>
-            <Link href="/about" className="inline-flex items-center gap-2 mt-4 px-6 sm:px-12 lg:px-24  py-4 text-black bg-white rounded-[12px] font-bold text-[18px] ">
-              <span>{HERO_CONTENT.cta}</span>
-              <ArrowsIcon />
-            </Link>
+            <Button href={HERO_CONTENT.ctaLink} className="text-black bg-white sm:px-12 lg:px-24  py-4 rounded-[12px] font-bold text-[18px]" icon={<ArrowsIcon />}>
+              {HERO_CONTENT.cta}
+            </Button>
 
             </div>
           <div className="flex flex-row md:flex-col gap-4 mx-auto mt-8">
