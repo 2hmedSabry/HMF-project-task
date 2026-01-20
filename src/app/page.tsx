@@ -1,6 +1,8 @@
+import Footer from "@/components/layout/footer/Footer";
 import Header from "@/components/layout/header/Header";
 import About from "@/components/sections/about/About";
 import HeroSection from "@/components/sections/hero/HeroSection";
+import OurProjects from "@/components/sections/ourProjects/OurProjects";
 import OurServices from "@/components/sections/ourServices/OurServices";
 
 export default function Home() {
@@ -11,6 +13,8 @@ export default function Home() {
       </HeroSection>
       <About/> 
       <OurServices/>
+      <OurProjects/>
+      <Footer />
     </>
   );
 }

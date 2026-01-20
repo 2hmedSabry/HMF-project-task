@@ -6,7 +6,7 @@ import Image from "next/image"
 
 export default function OurServices() {
     return (
-        <section id="about" className="min-h-screen container mx-auto py-10 ">
+        <section id="ourServices" className="min-h-screen container mx-auto py-10 ">
            <div className="flex flex-row justify-between ">
              <div className="min-h-[472px]">
             <Tag>{SERVICES_CONTENT.title}</Tag>

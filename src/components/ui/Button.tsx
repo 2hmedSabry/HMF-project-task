@@ -27,7 +27,7 @@ const ArrowsIcon = () => {
 
 export default function Button({ href, children, icon, className }: { href: string, children: React.ReactNode, icon?: React.ReactNode, className?: string }) {
     return (
-        <Link href={href} className={`inline-flex items-center justify-center gap-2 mt-4 px-6  ${className}`}>
+        <Link href={href} className={`inline-flex items-center justify-center gap-2 mt-4 px-6 w-fit  ${className}`}>
             <span>{children}</span>
             <span className="text-white mt-[10px]">
                 {icon ? icon : <ArrowsIcon />}
