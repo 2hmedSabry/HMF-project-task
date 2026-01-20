@@ -1,8 +1,8 @@
 export const InitIcon = () => {
     return (
         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M30 12H3" stroke="white" stroke-width="3.375" />
-            <path d="M30 21L14.25 21" stroke="white" stroke-width="3.375" />
+            <path d="M30 12H3" stroke="white" strokeWidth="3.375" />
+            <path d="M30 21L14.25 21" stroke="white" strokeWidth="3.375" />
         </svg>
     );
 }

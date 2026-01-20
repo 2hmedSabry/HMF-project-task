@@ -23,7 +23,7 @@ export default function Header() {
 
         {/* Part 1: Logo */}
         <div>
-          <Link href="/">
+          <Link href="/" aria-label="الصفحة الرئيسية - حسن محمد فقيه للاستشارات الهندسية">
             <LogoIcon />
           </Link>
         </div>

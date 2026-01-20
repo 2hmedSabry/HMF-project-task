@@ -14,6 +14,7 @@ export default function HeroSection({ children }: { children: React.ReactNode })
         alt="HMF Consulting Engineering"
         fill
         priority
+        sizes="100vw"
         className="object-cover -z-20"
       />
       {/* Dark Overlay */}
@@ -33,8 +34,8 @@ export default function HeroSection({ children }: { children: React.ReactNode })
 
 
         <div className="flex flex-col md:flex-row gap-4 md:gap-8 lg:gap-12 items-center  text-center md:text-right  ">
-            <div className="w-10/12">
-              <h1 className="mb-4 text-[24px] lg:text-[40px] font-bold ">
+          <div className="w-10/12">
+            <h1 className="mb-4 text-[24px] lg:text-[40px] font-bold ">
               {HERO_CONTENT.title}
             </h1>
             <p className=" lg:max-w-6xl text-sm lg:text-[24px] ">
@@ -44,13 +45,13 @@ export default function HeroSection({ children }: { children: React.ReactNode })
               {HERO_CONTENT.cta}
             </Button>
 
-            </div>
+          </div>
           <div className="flex flex-row md:flex-col gap-4 mx-auto mt-8">
             <div className="rounded-xl shadow-[0_0_10.4px_#ffffff80]">
-              <Image src="/hero-backgroundN2.jpg" alt="Hero Banner" width={200} height={156.00001525878906} className="rounded-xl" />
+              <Image src="/hero-backgroundN2.jpg" alt="Hero Banner" width={200} height={156} style={{ height: 'auto' }} className="rounded-xl" />
             </div>
             <div className="rounded-xl shadow-[0_0_10.4px_#ffffff80]">
-              <Image src="/hero-backgroundN1.jpg" alt="Hero Banner" width={200} height={156.00001525878906} className="rounded-xl" />
+              <Image src="/hero-backgroundN1.jpg" alt="Hero Banner" width={200} height={156} style={{ height: 'auto' }} className="rounded-xl" />
             </div>
           </div>
         </div>

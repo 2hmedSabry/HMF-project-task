@@ -10,7 +10,7 @@ export default function About() {
             <div className="flex flex-row items-center justify-between">
                 <div className="w-1/2 p-5 flex flex-col gap-2">
                     <Tag>{ABOUT_CONTENT.title}</Tag>
-                    <h1 className="text-[40px] font-bold " dangerouslySetInnerHTML={{ __html: ABOUT_CONTENT.description }} />
+                    <h2 className="text-[40px] font-bold " dangerouslySetInnerHTML={{ __html: ABOUT_CONTENT.description }} />
                     <p className="text-[20px] leading-[32px]">{ABOUT_CONTENT.description2}</p>
                     <Button href={ABOUT_CONTENT.ctaLink} className="bg-black text-white w-[271px] h-[56px] rounded-[12px] text-center font-bold text-[18px]" >
                         {ABOUT_CONTENT.cta}
@@ -20,11 +20,12 @@ export default function About() {
                 <div className="w-1/2 p-5 relative ">
                     {/* <div className="absolute top-[5px] left-[5px] w-[280.0272521972656px] h-[277.21417236328125px] border-[2.57px] border-black -z-10" /> */}
                     <div className="absolute top-[10px] left-[10px] w-[43%] h-[56.3%] border-[2.57px] border-black -z-10" />
-                    <Image src="/about.jpg" alt="about" width={600} height={600} className="rounded-[5.14px] " />
+                    <Image src="/about.jpg" alt="عن الشركة" width={600} height={600} style={{ height: 'auto' }} className="rounded-[5.14px] " />
                     <div className="" >
-                        <Image src="/hero-backgroundN2.jpg" alt="about" width={100} height={100} className="rounded-[5.14px] absolute bottom-[15px] right-[10px] w-[21.6%] h-[22.4%] border-[6.43px] border-white " />
-                        {/* <Image src="/hero-backgroundN2.jpg" alt="about" width={100} height={100} className="rounded-[5.14px] absolute bottom-[15px] right-[10px] w-[138.61px] h-[108.24px] border-[6.43px] border-gray-500 " /> */}
-
+                        {/* <Image src="/hero-backgroundN2.jpg" alt="about" width={100} height={100} className="rounded-[5.14px] absolute bottom-[15px] right-[10px] w-[21.6%] h-[22.4%] border-[6.43px] border-white " /> */}
+                        <div className="absolute bottom-[15px] right-[10px] w-[140px] h-[108px] rounded-[5.14px] border-[6.43px] border-white overflow-hidden">
+                            <Image src="/hero-backgroundN2.jpg" alt="صورة المشروع" fill sizes="140px" className="object-cover" />
+                        </div>
                     </div>
                 </div>
 
@@ -43,7 +44,7 @@ export default function About() {
                     >
                         <card.icon />
                         <div>
-                            <h1 className="mb-4 text-2xl">{card.title}</h1>
+                            <h3 className="mb-4 text-2xl">{card.title}</h3>
                             <p className={`text-[13px] leading-[16px] ${index === 0 ? 'text-white' : 'text-[#848484]'}`}>{card.description}</p>
                         </div>
                     </div>

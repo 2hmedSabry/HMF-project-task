@@ -26,17 +26,24 @@ export default function Footer() {
                         <p className="w-[457px] text-[18px] ">{FOOTER_CONTENT.about.description}</p>
                         <Link href={FOOTER_CONTENT.about.ctaLink} className="text-[#B2B2B2] text-xl font-bold inline-flex items-center gap-2 " >{FOOTER_CONTENT.about.ctaText}<AboutArrowIcon /></Link>
                         <div className="flex flex-row justify-between gap-5 w-fit px-3">
-                            <Link href={FOOTER_CONTENT.socialLinks.whatsappLink} target="_blank" className="p-1">    <WhatsAppFooterIcon /></Link>
-                            <Link href={FOOTER_CONTENT.socialLinks.youtubeLink} target="_blank" className="p-1">    <YoutubeIcon /></Link>
-                            <Link href={FOOTER_CONTENT.socialLinks.instagramLink} target="_blank" className="p-1">    <InstagramFooterIcon /></Link>
-                            <Link href={FOOTER_CONTENT.socialLinks.facebookLink} target="_blank" className="p-1">    <FacebookIcon /></Link>
+                            <Link href={FOOTER_CONTENT.socialLinks.whatsappLink} target="_blank" className="p-1" aria-label="تواصل عبر واتساب"><WhatsAppFooterIcon /></Link>
+                            <Link href={FOOTER_CONTENT.socialLinks.youtubeLink} target="_blank" className="p-1" aria-label="قناتنا على يوتيوب"><YoutubeIcon /></Link>
+                            <Link href={FOOTER_CONTENT.socialLinks.instagramLink} target="_blank" className="p-1" aria-label="تابعنا على انستغرام"><InstagramFooterIcon /></Link>
+                            <Link href={FOOTER_CONTENT.socialLinks.facebookLink} target="_blank" className="p-1" aria-label="تابعنا على فيسبوك"><FacebookIcon /></Link>
                         </div>
                     </div>
                     <div className="flex flex-col gap-6">
                         <span className="font-bold">{FOOTER_CONTENT.newsletter.title}</span>
                         <div className="flex flex-row relative">
-                            <input className="bg-white text-black w-[530px] h-full p-5 rounded-[81.04px]" type="email" placeholder="البريد الالكتروني" />
-                            <Button href="/" className="absolute left-[14%] top-[-11px] w-[117px] h-[60px] bg-black text-white rounded-[81.04px] " icon={<ArrowIcon />} />                        </div>
+                            <input
+                                id="newsletter-email"
+                                className="bg-white text-black w-[530px] h-full p-5 rounded-[81.04px]"
+                                type="email"
+                                placeholder="البريد الالكتروني"
+                                aria-label="البريد الالكتروني للاشتراك في النشرة البريدية"
+                            />
+                            <Button href="/" className="absolute left-[14%] top-[-11px] w-[117px] h-[60px] bg-black text-white rounded-[81.04px]" icon={<ArrowIcon />} aria-label="اشتراك في النشرة البريدية">{""}</Button>
+                        </div>
                         <span className="text-[#B2B2B2] text-sm w-[439px]">{FOOTER_CONTENT.newsletter.disclaimer}</span>
                     </div>
 
