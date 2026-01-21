@@ -42,7 +42,7 @@ export default function Footer() {
                                 placeholder="البريد الالكتروني"
                                 aria-label="البريد الالكتروني للاشتراك في النشرة البريدية"
                             />
-                            <Button href="/" className="absolute left-[14%] top-[-11px] w-[117px] h-[60px] bg-black text-white rounded-[81.04px]" icon={<ArrowIcon />} aria-label="اشتراك في النشرة البريدية">{""}</Button>
+                            <Button href="/" className="absolute left-[14%] top-[-11px] w-[117px] h-[60px] bg-black text-white rounded-[81.04px]" icon={<ArrowIcon />} aria-label="اشتراك في النشرة البريدية">اشتراك</Button>
                         </div>
                         <span className="text-[#B2B2B2] text-sm w-[439px]">{FOOTER_CONTENT.newsletter.disclaimer}</span>
                     </div>

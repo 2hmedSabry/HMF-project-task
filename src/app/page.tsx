@@ -5,6 +5,7 @@ import HeroSection from "@/components/sections/hero/HeroSection";
 import OurPartners from "@/components/sections/ourPartners/OurPartners";
 import OurProjects from "@/components/sections/ourProjects/OurProjects";
 import OurServices from "@/components/sections/ourServices/OurServices";
+import MediaSection from "@/components/sections/media/MediaSection";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <About/> 
       <OurServices/>
       <OurProjects/>
+      <MediaSection/>
       <OurPartners/>
       <Footer />
     </>
