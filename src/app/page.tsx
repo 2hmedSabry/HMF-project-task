@@ -13,11 +13,11 @@ export default function Home() {
       <HeroSection>
         <Header />
       </HeroSection>
-      <About/> 
-      <OurServices/>
-      <OurProjects/>
-      <MediaSection/>
-      <OurPartners/>
+      <About />
+      <OurServices />
+      <OurProjects />
+      <MediaSection />
+      <OurPartners />
       <Footer />
     </>
   );

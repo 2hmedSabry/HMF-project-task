@@ -19,7 +19,7 @@ export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <header className="relative mx-auto  py-4 container">
+    <header className="relative mx-auto py-2">
       <div className="flex items-center justify-between gap-8">
         {/* Part 1: Logo */}
         <Link href="/" aria-label="الصفحة الرئيسية - حسن محمد فقيه للاستشارات الهندسية">
@@ -80,3 +80,4 @@ export default function Header() {
     </header>
   );
 }
+  
