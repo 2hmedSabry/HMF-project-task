@@ -1,5 +1,5 @@
 'use client'
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { PlayIcon } from "./icons/PlayIcon";
 import { STATS } from "@/constants/status";
@@ -9,6 +9,22 @@ import { ArrowsIcon } from "./icons/ArrowsIcon";
 
 export default function HeroSection({ children }: { children: React.ReactNode }) {
   const [bgImage, setBgImage] = useState("/hero-backgroundN2.jpg");
+  const [displayText, setDisplayText] = useState("");
+  const fullText = "تشغيل الفيديو";
+
+  useEffect(() => {
+    let currentIndex = 0;
+    const typingInterval = setInterval(() => {
+      if (currentIndex <= fullText.length) {
+        setDisplayText(fullText.slice(0, currentIndex));
+        currentIndex++;
+      } else {
+        clearInterval(typingInterval);
+      }
+    }, 150); // Control the typing speed here (ms)
+
+    return () => clearInterval(typingInterval);
+  }, []);
 
   return (
     <section className="relative min-h-screen h-[1105px] " dir="rtl">
@@ -33,7 +49,10 @@ export default function HeroSection({ children }: { children: React.ReactNode })
             <button aria-label="تشغيل الفيديو" className="w-26 h-16 rounded-[100px] border border-white/50  flex items-center justify-center " >
               <PlayIcon />
             </button>
-            <span className="text-[24px] font-bold" >تشغيل الفيديو</span>
+            <span className="text-[24px] font-bold min-w-[150px]" >
+              {displayText}
+              <span className="animate-pulse">|</span>
+            </span>
           </div>
           {/* Main Content */}
 
