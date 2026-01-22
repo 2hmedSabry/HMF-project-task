@@ -1,3 +1,5 @@
+import { CONTACTS } from "./contact";
+
 export const FOOTER_CONTENT = {
     about: {
         description: "في مكتب حسن محمد فقيه للاستشارات الهندسية، نقدم سنوات من الخبرة في تقديم الحلول الهندسية المتكاملة، من الدراسات والتصاميم إلى الإشراف والتنفيذ.",
@@ -9,12 +11,7 @@ export const FOOTER_CONTENT = {
         placeholder: "البريد الالكتروني",
         disclaimer: "سيتم الحفاظ على سرية عنوان بريدك الإلكتروني ولن يتم استخدامه إلا لإرسال النشرة الإخبارية أو الرد على أي استفسارات."
     },
-    socialLinks: {
-        whatsappLink: "https://wa.me/966505933440",
-        youtubeLink: "https://www.youtube.com/@hmfaqih",
-        instagramLink: "https://www.instagram.com/hmfaqih",
-        facebookLink: "https://www.facebook.com/hmfaqih"
-    },
+    socialLinks: CONTACTS.socialLinks,
     quickLinks: {
         title: "روابط سريعة",
         links: [
@@ -53,5 +50,5 @@ export const FOOTER_CONTENT = {
         text: "حقوق النشر محفوظة لشركة حسن محمد فقيه للاستشارات الهندسية © 2025",
         developer: "تم تطويره بواسطة AL Master"
     },
-    
+
 }

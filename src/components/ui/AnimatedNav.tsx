@@ -15,6 +15,7 @@ interface NavLink {
     label: string;
     href: string;
     subLinks?: SubLink[];
+    onClick?: () => void;
 }
 
 interface AnimatedNavProps {
@@ -103,8 +104,9 @@ export default function AnimatedNav({
                 ref={containerRef}
                 className="flex items-center gap-1 flex-1 justify-between relative h-full"
             >
-                <span className="px-1 py-5 font-bold text-[20px] cursor-pointer">{defaultField}</span>
-                {links.map((link, index) => {
+
+                {/* Only add defaultField to links if it exists - onClick: undefined added to match NavLink type */}
+                {[...(defaultField ? [{ label: defaultField, href: '/', subLinks: [] as SubLink[], onClick: undefined }] : []), ...links].map((link, index) => {
                     const hasSubLinks = link.subLinks && link.subLinks.length > 0;
 
                     return (
@@ -121,6 +123,12 @@ export default function AnimatedNav({
                                 <Link
                                     href={link.href}
                                     ref={(el) => { navItemsRef.current[index] = el; }}
+                                    onClick={(e) => {
+                                        if (link.onClick) {
+                                            e.preventDefault();
+                                            link.onClick();
+                                        }
+                                    }}
                                     className={`relative text-xl font-bold z-10 flex items-center gap-1
                                     ${textColor}
                                     ${linkClassName}`}

@@ -82,6 +82,16 @@
   animation: nav-link-anim .5s ease-in-out forwards;
 }
 
+/* Fade Out Animation */
+@keyframes fadeOut {
+    0% { opacity: 0.8; }
+    100% { opacity: 0; }
+}
+.ghost-fade {
+    animation: fadeOut 0.9s ease-out forwards;
+}
+
+
 /* Fade Animation */
 @keyframes fade-anim {
   0% { opacity: 1; }
@@ -91,6 +101,40 @@
 
 .fade-animation-wrapper:hover {
   animation: fade-anim 0.6s ease-in-out;
+}
+
+/* Slide Down Animation - translate-y 30px */
+@keyframes slide-down-up-anim {
+  0% { 
+    transform: translateY(0); 
+    opacity: 1;
+    color: white !important;
+  }
+  50% { 
+    transform: translateY(10px); 
+    opacity: 0.5;
+    color: white !important;
+  }
+  100% { 
+    transform: translateY(0); 
+    opacity: 1;
+    color: white !important;
+  }
+}
+
+.slide-down-up-animation-wrapper {
+  display: inline-block;
+  transition: all 0.3s ease-in-out;
+}
+
+.slide-down-up-animation-wrapper:hover {
+  animation: slide-down-up-anim 0.6s ease-in-out forwards;
+  color: white !important;
+}
+
+/* Keep text white after hover animation */
+.slide-down-up-animation-wrapper:hover * {
+  color: white !important;
 }
 
 :root {

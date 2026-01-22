@@ -25,13 +25,11 @@ const ArrowsIcon = () => {
     )
 }
 
-export default function Button({ href, children, icon, className, "aria-label": ariaLabel }: { href: string, children: React.ReactNode, icon?: React.ReactNode, className?: string, "aria-label"?: string }) {
+export default function Button({ href, children, icon, className, "aria-label": ariaLabel }: { href: string, children?: React.ReactNode, icon?: React.ReactNode, className?: string, "aria-label"?: string }) {
     return (
-        <Link href={href} className={`inline-flex items-center justify-center gap-2 mt-4 px-6 w-fit  ${className}`} aria-label={ariaLabel}>
-            <span>{children}</span>
-            <span className="text-white mt-[10px]">
-                {icon ? icon : <ArrowsIcon />}
-            </span>
+        <Link href={href} className={`inline-flex items-center justify-center gap-2 mt-4 px-6 ${className}`} aria-label={ariaLabel}>
+            {children}
+            {icon ? icon : <ArrowsIcon />}
         </Link>
     )
 }

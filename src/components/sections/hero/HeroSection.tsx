@@ -83,7 +83,7 @@ export default function HeroSection({ children }: { children: React.ReactNode })
                 href={HERO_CONTENT.ctaLink}
                 text={HERO_CONTENT.cta}
                 icon={<MdOutlineKeyboardDoubleArrowLeft size={24} />}
-                className="mt-4 px-6 text-black bg-white sm:px-12 lg:px-24 py-4 text-[18px]"
+                className="mt-4  text-black bg-white  text-[18px]"
               />
             </div>
 

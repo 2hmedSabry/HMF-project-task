@@ -7,13 +7,20 @@ interface AnimatedButtonProps {
     text: string;
     icon?: ReactNode;
     className?: string;
+    width?: string;
+    height?: string;
 }
 
-export default function AnimatedButton({ href, text, icon, className = "" }: AnimatedButtonProps) {
+export default function AnimatedButton({ href, text, icon, className = "" , width = "270px", height = "56px" }: AnimatedButtonProps) {
     return (
         <Link
             href={href}
-            className={`group flex items-center justify-center gap-0.5 rounded-[12px] font-bold transition-all relative overflow-hidden ${className} w-fit`}
+            className={`group flex items-center justify-center gap-0.5 rounded-[12px] font-bold transition-all relative overflow-hidden ${className}`}
+            style={{
+                width: width,
+                height: height,
+            }}
+
         >
             <style dangerouslySetInnerHTML={{
                 __html: `
@@ -54,6 +61,6 @@ export default function AnimatedButton({ href, text, icon, className = "" }: Ani
                 </span>
             )}
         </Link>
-        
+
     );
 }

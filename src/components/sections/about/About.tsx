@@ -26,7 +26,7 @@ export default function About() {
                         href={ABOUT_CONTENT.ctaLink}
                         text={ABOUT_CONTENT.cta}
                         icon={<MdOutlineKeyboardDoubleArrowLeft size={24} />}
-                        className="flex items-center justify-center gap-2 px-6 bg-black text-white w-[270px] h-[56px] rounded-[12px] text-center font-bold text-[18px] mt-[21px]"
+                        className="flex items-center justify-center gap-2 bg-black text-white rounded-[12px] text-center font-bold text-[18px] mt-[21px]"
                     />
                 </div>
                 <div className="w-1/2 p-5 relative ">
