@@ -7,6 +7,9 @@ import { HERO_CONTENT } from "@/constants/heroContent";
 import Button from "@/components/ui/Button";
 import { ArrowsIcon } from "./icons/ArrowsIcon";
 import { X } from "lucide-react";
+import Link from "next/link";
+import { MdOutlineKeyboardDoubleArrowLeft } from "react-icons/md";
+import AnimatedButton from "@/components/ui/AnimatedButton";
 
 export default function HeroSection({ children }: { children: React.ReactNode }) {
   const [bgImage, setBgImage] = useState("/hero-backgroundN2.jpg");
@@ -93,9 +96,12 @@ export default function HeroSection({ children }: { children: React.ReactNode })
                 </p>
               </div>
 
-              <Button href={HERO_CONTENT.ctaLink} className="text-black  bg-white sm:px-12 lg:px-24  py-4 rounded-[12px] font-bold text-[18px]" icon={<ArrowsIcon />}>
-                {HERO_CONTENT.cta}
-              </Button>
+              <AnimatedButton
+                href={HERO_CONTENT.ctaLink}
+                text={HERO_CONTENT.cta}
+                icon={<MdOutlineKeyboardDoubleArrowLeft size={24} />}
+                className="mt-4 px-6 text-black bg-white sm:px-12 lg:px-24 py-4 text-[18px]"
+              />
             </div>
 
             <div className="flex flex-row md:flex-col gap-4 ">
@@ -117,7 +123,7 @@ export default function HeroSection({ children }: { children: React.ReactNode })
 
 
           {/* Last Part */}
-          <div className="flex gap-2 lg:gap-10 mt-12 lg:mt-20 justify-center md:justify-start">
+          <div className="flex gap-2 lg:gap-10 mt-12 lg:mt-22 justify-center md:justify-start">
             {STATS.map((item) => (
               <div key={item.label} className="text-center text-sm md:text-[24px] font-medium flex flex-col items-center gap-2 md:gap-4 lg:gap-6">
                 <p className="px-2 sm:px-6 md:px-10">{item.label}</p>

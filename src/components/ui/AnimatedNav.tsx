@@ -88,7 +88,7 @@ export default function AnimatedNav({
                 setHoveredIndex(null);
                 setOpenDropdown(null);
             }}
-            className={`hidden lg:flex items-center border border-white/50 rounded-[100px] px-5 relative h-16 ${navClassName}`}
+            className={`hidden lg:flex items-center border border-white/50 rounded-[100px] px-3 relative h-16 ${navClassName}`}
             dir={dir}
         >
             <div
@@ -111,7 +111,7 @@ export default function AnimatedNav({
                             <Link
                                 href={link.href}
                                 ref={(el) => { navItemsRef.current[index] = el; }}
-                                className={`relative px-4 py-2 text-md text-xl font-bold transition-all duration-300 z-10 flex items-center gap-1
+                                className={`relative px-4 py-2 text-xl font-bold transition-all duration-300 z-10 flex items-center gap-1
                                     text-white 
                                     ${linkClassName}`}
                             >

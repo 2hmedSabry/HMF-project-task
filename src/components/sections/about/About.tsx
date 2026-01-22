@@ -2,6 +2,8 @@ import Button from "@/components/ui/Button";
 import { ABOUT_CARDS, ABOUT_CONTENT } from "@/constants/aboutContent";
 import Image from "next/image";
 import Tag from "@/components/ui/Tag";
+import AnimatedButton from "@/components/ui/AnimatedButton";
+import { MdOutlineKeyboardDoubleArrowLeft } from "react-icons/md";
 
 
 export default function About() {
@@ -12,10 +14,12 @@ export default function About() {
                     <Tag>{ABOUT_CONTENT.title}</Tag>
                     <h2 className="text-[40px] font-bold " dangerouslySetInnerHTML={{ __html: ABOUT_CONTENT.description }} />
                     <p className="text-[20px] leading-[32px]">{ABOUT_CONTENT.description2}</p>
-                    <Button href={ABOUT_CONTENT.ctaLink} className="bg-black text-white w-[271px] h-[56px] rounded-[12px] text-center font-bold text-[18px]" >
-                        {ABOUT_CONTENT.cta}
-                    </Button>
-
+                    <AnimatedButton
+                        href={ABOUT_CONTENT.ctaLink}
+                        text={ABOUT_CONTENT.cta}
+                        icon={<MdOutlineKeyboardDoubleArrowLeft size={24} />}
+                        className="flex items-center justify-center gap-2 px-6 bg-black text-white w-[270px] h-[56px] rounded-[12px] text-center font-bold text-[18px] mt-[21px]"
+                    />
                 </div>
                 <div className="w-1/2 p-5 relative ">
                     {/* <div className="absolute top-[5px] left-[5px] w-[280.0272521972656px] h-[277.21417236328125px] border-[2.57px] border-black -z-10" /> */}

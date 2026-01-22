@@ -1,20 +1,25 @@
+import AnimatedButton from "@/components/ui/AnimatedButton"
 import Button from "@/components/ui/Button"
 import Tag from "@/components/ui/Tag"
 import { SERVICES_CONTENT, SERVICES_CARDS } from "@/constants/servicesContent"
 import Image from "next/image"
+import { MdOutlineKeyboardDoubleArrowLeft } from "react-icons/md"
 
 
 export default function OurServices() {
     return (
         <section id="ourServices" className="min-h-screen container mx-auto py-10 ">
             <div className="flex flex-row justify-between ">
-                <div className="min-h-[472px]">
+                <div className="">
                     <Tag>{SERVICES_CONTENT.title}</Tag>
                     <h2 className="text-[64px] font-bold " dangerouslySetInnerHTML={{ __html: SERVICES_CONTENT.description }} />
                     <p className="text-[24px] leading-[140%] text-[#666666] mt-8 w-[450px]">{SERVICES_CONTENT.description2}</p>
-                    <Button href={SERVICES_CONTENT.ctaLink} className="bg-black text-white w-[271px] h-[56px] rounded-[12px] text-center font-bold text-[18px] mt-[21px]" >
-                        {SERVICES_CONTENT.cta}
-                    </Button>
+                    <AnimatedButton
+                        href={SERVICES_CONTENT.ctaLink}
+                        text={SERVICES_CONTENT.cta}
+                        icon={<MdOutlineKeyboardDoubleArrowLeft size={24} />}
+                        className="flex items-center justify-center gap-2 px-6 bg-black text-white w-[270px] h-[56px] rounded-[12px] text-center font-bold text-[18px] mt-[21px]"
+                    />
                 </div>
 
                 <div className=" grid grid-cols-2 gap-4">
