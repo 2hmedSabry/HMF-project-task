@@ -3,6 +3,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useRef, useEffect, useCallback, useLayoutEffect } from "react";
 import { ChevronDown } from "lucide-react";
+import NavLinkAnimation from "./NavLinkAnimation";
+
 
 interface SubLink {
     label: string;
@@ -16,23 +18,29 @@ interface NavLink {
 }
 
 interface AnimatedNavProps {
+    defaultField?: string;
     links: NavLink[];
     navClassName?: string;
+    navBorderColor?: string;
     linkClassName?: string;
     lineColor?: string;
     lineWidth?: number;
     lineHeight?: string;
     dir?: "rtl" | "ltr";
+    textColor?: string;
 }
 
 export default function AnimatedNav({
+    defaultField,
     links,
     navClassName = "",
     linkClassName = "",
     lineColor = "bg-white",
     lineWidth = 30,
     lineHeight = "1.5px",
-    dir = "rtl"
+    dir = "rtl",
+    textColor = "text-white",
+    navBorderColor = "border border-white/50",
 }: AnimatedNavProps) {
     const pathname = usePathname();
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -88,13 +96,14 @@ export default function AnimatedNav({
                 setHoveredIndex(null);
                 setOpenDropdown(null);
             }}
-            className={`hidden lg:flex items-center border border-white/50 rounded-[100px] px-3 relative h-16 ${navClassName}`}
+            className={`hidden lg:flex items-center ${navBorderColor} rounded-[100px] px-3 relative h-16 ${navClassName}`}
             dir={dir}
         >
             <div
                 ref={containerRef}
                 className="flex items-center gap-1 flex-1 justify-between relative h-full"
             >
+                <span className="px-1 py-5 font-bold text-[20px] cursor-pointer">{defaultField}</span>
                 {links.map((link, index) => {
                     const hasSubLinks = link.subLinks && link.subLinks.length > 0;
 
@@ -108,17 +117,18 @@ export default function AnimatedNav({
                             }}
                             onMouseLeave={() => setOpenDropdown(null)}
                         >
-                            <Link
-                                href={link.href}
-                                ref={(el) => { navItemsRef.current[index] = el; }}
-                                className={`relative px-4 py-2 text-xl font-bold transition-all duration-300 z-10 flex items-center gap-1
-                                    text-white 
+                            <NavLinkAnimation>
+                                <Link
+                                    href={link.href}
+                                    ref={(el) => { navItemsRef.current[index] = el; }}
+                                    className={`relative text-xl font-bold z-10 flex items-center gap-1
+                                    ${textColor}
                                     ${linkClassName}`}
-                            >
-                                {link.label}
-                                {hasSubLinks && <ChevronDown size={14} className={`transition-transform duration-300 ${openDropdown === index ? 'rotate-180' : ''}`} />}
-                            </Link>
-
+                                >
+                                    {link.label}
+                                    {hasSubLinks && <ChevronDown size={14} className={`transition-transform duration-300 ${openDropdown === index ? 'rotate-180' : ''}`} />}
+                                </Link>
+                            </NavLinkAnimation>
                             {/* Dropdown Menu */}
                             {hasSubLinks && (
                                 <div

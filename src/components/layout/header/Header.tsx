@@ -5,13 +5,14 @@ import { Menu, X } from "lucide-react";
 import { LogoIcon } from "./icons/LogoIcon";
 import { InitIcon } from "./icons/InitIcon";
 import { SearchIcon } from "./icons/SearchIcon";
-import { WhatsAppIcon } from "./icons/WhatsAppIcon";
-import { MailIcon } from "./icons/MailIcon";
 import { CONTACTS } from "@/constants/contact";
 import DesktopNav from "./DesktopNav";
 import MobileNav from "./MobileNav";
 import Link from "next/link";
 import Nav from "@/components/ui/Nav";
+import FadeAnimation from "@/components/ui/FadeAnimation";
+import Button from "@/components/ui/Button";
+
 
 
 
@@ -31,47 +32,44 @@ export default function Header() {
 
         {/* Part 3: Icons & Actions */}
         <Nav className="w-[255px] h-16">
-            <span className="lg:block hidden">
-              <InitIcon />
-            </span>
-            {/* Mobile Menu Button */}
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden p-[2px]  text-white/80 hover:text-white border border-white/30 rounded-lg hover:border-white/50 hover:bg-white/10 transition-all duration-300"
-              aria-label="Toggle menu"
-            >
-              {isMobileMenuOpen ? <X size={18} /> : <InitIcon />}
-            </button>
+          <span className="lg:block hidden">
+            <InitIcon />
+          </span>
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="lg:hidden p-[2px]  text-white/80 hover:text-white border border-white/30 rounded-lg hover:border-white/50 hover:bg-white/10 transition-all duration-300"
+            aria-label="Toggle menu"
+          >
+            {isMobileMenuOpen ? <X size={18} /> : <InitIcon />}
+          </button>
 
-            <span className="w-[2px] h-16 bg-white/50 hidden lg:block  " />
+          <span className="w-[2px] h-16 bg-white/50 hidden lg:block  " />
 
-            {/* Search Icon */}
-            <button
-              className="p-2 text-white/80"
-              aria-label="Search"
-            >
+          {/* Search Icon */}
+          <button
+            className="p-2 text-white/80"
+            aria-label="Search"
+          >
+            <FadeAnimation>
               <SearchIcon />
-            </button>
-
-            {/* WhatsApp Icon */}
+            </FadeAnimation>
+          </button>
+          {/* Contact Link - Icons */}
+          {CONTACTS.links.map((link, index) => (
             <Link
-              href={CONTACTS.whatsapp}
+              key={index}
+              href={link.href}
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 text-white/80"
               aria-label="WhatsApp"
             >
-              <WhatsAppIcon />
+              <FadeAnimation>
+                {link.icon}
+              </FadeAnimation>
             </Link>
-
-            {/* Mail Icon */}
-            <Link
-              href={CONTACTS.email}
-              className="p-2 text-white/80"
-              aria-label="Email"
-            >
-              <MailIcon />
-            </Link>
+          ))}
         </Nav>
       </div>
 
@@ -80,4 +78,3 @@ export default function Header() {
     </header>
   );
 }
-  

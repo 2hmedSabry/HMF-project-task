@@ -4,6 +4,7 @@ import Image from "next/image"
 import Location from "./Icons/location"
 import AnimatedButton from "@/components/ui/AnimatedButton"
 import { MdOutlineKeyboardDoubleArrowLeft } from "react-icons/md"
+import AnimatedNav from "@/components/ui/AnimatedNav"
 
 export default function OurProjects() {
 
@@ -11,15 +12,19 @@ export default function OurProjects() {
     return (
 
         <section id="ourProjects" className="min-h-screen container mx-auto py-10">
-            <div className="flex flex-col justify-between gap-16">
-                <div className="border border-[#B7B7B7/80] rounded-[100px] px-16 w-[43.5%] h-[64px] mx-auto flex flex-row justify-between  items-center">
-                    <span className="px-1 py-5 font-bold text-[20px] cursor-pointer ">{OUR_PROJECTS_CONTENT.title}</span>
-                    {OUR_PROJECTS_CONTENT.list.map((project, index) => (
-                        <span key={index} className="px-1 py-5 font-bold text-[20px] cursor-pointer ">
-                            {project.city}
-                        </span>
-                    ))}
-                </div>
+            <div className="flex flex-col justify-between items-center gap-16">
+                <AnimatedNav
+                    defaultField={OUR_PROJECTS_CONTENT.title}
+                    links={OUR_PROJECTS_CONTENT.list.map((project, index) => ({
+                        key: index,
+                        label: project.city,
+                        href: project.ctaLink,
+                    }))}
+                    textColor="text-black"
+                    navClassName="px-16 w-[43.5%] h-[64px] flex flex-row justify-between items-center"
+                    navBorderColor="border border-[#B7B7B7/80]"
+                    lineColor="px-1 py-5 font-bold text-[20px] cursor-pointer"
+                />
                 <div className="flex flex-row items-center justify-center  bg-white rounded-[32px] w-[1280px] h-[551px]">
                     <div className="w-[50%] flex flex-col pr-[32px] ">
                         <Image src={OUR_PROJECTS_CONTENT.list[0].flag} alt="flag" width={100} height={100} className="opacity-50" />

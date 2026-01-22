@@ -4,10 +4,7 @@ import Image from "next/image";
 import { PlayIcon } from "./icons/PlayIcon";
 import { STATS } from "@/constants/status";
 import { HERO_CONTENT } from "@/constants/heroContent";
-import Button from "@/components/ui/Button";
-import { ArrowsIcon } from "./icons/ArrowsIcon";
 import { X } from "lucide-react";
-import Link from "next/link";
 import { MdOutlineKeyboardDoubleArrowLeft } from "react-icons/md";
 import AnimatedButton from "@/components/ui/AnimatedButton";
 

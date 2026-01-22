@@ -4,6 +4,8 @@ import NavigationArrows from "@/components/ui/NavigationArrows";
 import { MEDIA_SECTION_CONTENT } from "@/constants/mediaSectionContent"
 import Image from "next/image";
 import Link from "next/link";
+import NavLinkAnimation from "@/components/ui/NavLinkAnimation";
+import AnimatedNav from "@/components/ui/AnimatedNav";
 
 export default function MediaSection() {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -43,18 +45,23 @@ export default function MediaSection() {
             <div className="flex items-center justify-between mb-8">
                 <h2 className="text-2xl font-bold" dangerouslySetInnerHTML={{ __html: MEDIA_SECTION_CONTENT.title }} />
                 <div className="absolute left-1/2 -translate-x-1/2">
-                    <div className="border border-[#B7B7B7/80] rounded-[100px] px-16 w-[393px] h-[64px] flex flex-row justify-between items-center">
-                        {MEDIA_SECTION_CONTENT.list.map((item, index) => (
-                            <span key={index} className="px-1 py-5 font-bold text-[20px] cursor-pointer">
-                                {item.title}
-                            </span>
-                        ))}
-                    </div>
+                   <AnimatedNav
+                    links={MEDIA_SECTION_CONTENT.list}
+                    textColor="text-black"
+                    navClassName="px-16 w-[393px] h-[64px] flex flex-row justify-between items-center"
+                    navBorderColor="border border-[#B7B7B7/80]"
+                    lineColor="px-1 py-5 font-bold text-[20px] cursor-pointer"
+                />
                 </div>
+
+
+
                 {/* Empty div to balance flexbox */}
                 <div className="w-[259px]"></div>
             </div>
-
+            <div className="mx-auto">
+                
+            </div>
             {/* Cards container - shows 2 cards with fade effect */}
             <div className="overflow-visible">
                 <div className="flex flex-row-reverse gap-8">

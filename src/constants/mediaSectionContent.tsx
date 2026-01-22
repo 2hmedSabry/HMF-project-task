@@ -2,12 +2,12 @@ export const MEDIA_SECTION_CONTENT = {
     title: "الاخبار &<br/> أنشطتنا وفعالياتنا",
     list: [
         {
-            title: "الأخبار",
-            link: "/news"
+            label: "الأخبار",
+            href: "/news"
         },
         {
-            title: "أنشطتنا وفعالياتنا",
-            link: "/events"
+            label: "أنشطتنا وفعالياتنا",
+            href: "/events"
         }
     ],
     cards: [{
