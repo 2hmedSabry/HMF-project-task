@@ -7,26 +7,12 @@ import { HERO_CONTENT } from "@/constants/heroContent";
 import { X } from "lucide-react";
 import { MdOutlineKeyboardDoubleArrowLeft } from "react-icons/md";
 import AnimatedButton from "@/components/ui/AnimatedButton";
+import AutoWrittenText from "@/components/ui/AutoWrittenText";
 
 export default function HeroSection({ children }: { children: React.ReactNode }) {
   const [bgImage, setBgImage] = useState("/hero-backgroundN2.jpg");
-  const [displayText, setDisplayText] = useState("");
   const [isVideoOpen, setIsVideoOpen] = useState(false);
-  const fullText = "تشغيل الفيديو";
 
-  useEffect(() => {
-    let currentIndex = 0;
-    const typingInterval = setInterval(() => {
-      if (currentIndex <= fullText.length) {
-        setDisplayText(fullText.slice(0, currentIndex));
-        currentIndex++;
-      } else {
-        clearInterval(typingInterval);
-      }
-    }, 150);
-
-    return () => clearInterval(typingInterval);
-  }, []);
 
   // Handle ESC key to close video
   useEffect(() => {
@@ -75,10 +61,10 @@ export default function HeroSection({ children }: { children: React.ReactNode })
             >
               <PlayIcon />
             </button>
-            <span className="text-[24px] font-bold min-w-[150px]" >
-              {displayText}
-              <span className="animate-pulse">|</span>
-            </span>
+            <AutoWrittenText
+              text="تشغيل الفيديو"
+              className="text-[24px] font-bold min-w-[150px]"
+            />
           </div>
           {/* Main Content */}
 
@@ -134,12 +120,12 @@ export default function HeroSection({ children }: { children: React.ReactNode })
       {/* Full Page Video Container */}
       {isVideoOpen && (
         <div
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-black transition-opacity duration-500 animate-in fade-in"
+          className="fixed inset-0 z-100 flex items-center justify-center bg-black transition-opacity duration-500 animate-in fade-in"
         >
           {/* Close Button (Hidden by default based on request, but kept for accessibility unless you really want it gone) */}
           <button
             onClick={() => setIsVideoOpen(false)}
-            className="absolute top-8 right-8 z-[110] p-4 text-white/50 hover:text-white transition-colors"
+            className="absolute top-8 right-8 z-110 p-4 text-white/50 hover:text-white transition-colors"
             aria-label="إغلاق"
           >
             <X size={48} strokeWidth={1} />
