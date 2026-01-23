@@ -4,11 +4,11 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { LogoIcon, InitIcon, SearchIcon } from "@/components/icons";
 import { CONTACTS } from "@/constants/contact";
-import DesktopNav from "./DesktopNav";
 import MobileNav from "./MobileNav";
 import Link from "next/link";
 import { Nav, Button } from "@/components/ui";
-import { FadeAnimation } from "@/components/ui/animations";
+import { AnimatedNav, FadeAnimation } from "@/components/ui/animations";
+import { NAV_LINKS } from "@/constants";
 
 
 
@@ -20,12 +20,20 @@ export default function Header() {
     <header className="relative mx-auto py-2">
       <div className="flex items-center justify-between gap-8">
         {/* Part 1: Logo */}
-        <Link href="/" aria-label="الصفحة الرئيسية - حسن محمد فقيه للاستشارات الهندسية">
+        <Link href="/" aria-label="الصفحة الرئيسية - حسن محمد فقيه للاستشارات الهندسية"
+        >
           <LogoIcon />
         </Link>
 
         {/* Part 2: Basic Navigation  */}
-        <DesktopNav />
+        <AnimatedNav
+              links={NAV_LINKS}
+              navClassName="lg:w-[872px]  h-16 hidden lg:flex"
+              linkClassName="px-4 py-4"
+              lineColor="bg-white"
+              lineWidth={30}
+              lineHeight="1.5px"
+            />
 
         {/* Part 3: Icons & Actions */}
         <Nav className="w-[255px] h-16">

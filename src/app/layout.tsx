@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
@@ -19,9 +19,22 @@ const jannaLT = localFont({
   display: "swap",
 });
 
+// Viewport config - prevents layout shifts
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: '#000000',
+};
+
 export const metadata: Metadata = {
   title: "HMF Consulting Engineers",
   description: "نقدم في مكتب حسن محمد فقيه للاستشارات الهندسية مجموعة متكاملة من الخدمات الهندسية تشمل التصميم المعماري، الإشراف الهندسي، وإدارة المشاريع، مع التزام كامل بتطبيق أعلى معايير الجودة والابتكار. نعمل على تنفيذ المشاريع في منطقة الباحة وخارجها بكفاءة عالية، ونسعى دائمًا إلى تقديم حلول مخصصة تلبي تطلعات عملائنا وتسهم في تحسين البنية التحتية وتحقيق التنمية المستدامة.",
+  openGraph: {
+    title: "HMF Consulting Engineers",
+    description: "مكتب حسن محمد فقيه للاستشارات الهندسية",
+    locale: "ar_SA",
+    type: "website",
+  },
 };
 
 export default function RootLayout({

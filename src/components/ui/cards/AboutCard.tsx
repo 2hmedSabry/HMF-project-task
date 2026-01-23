@@ -33,7 +33,8 @@ export default function AboutCard({
             role="listitem"
         >
             <div className="flex flex-row items-center justify-center gap-1.5 max-w-[350px]">
-                <div className="shrink-0 ">
+                <div className={`shrink-0 w-[72px] h-[72px] rounded-full flex items-center justify-center transition-all duration-300 ${isReversed ? 'bg-white text-black' : 'bg-transparent'
+                    }`}>
                     <card.icon />
                 </div>
                 <div>

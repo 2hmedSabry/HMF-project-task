@@ -34,7 +34,7 @@ export default function HeroSection({ children }: { children: React.ReactNode })
   }, [isVideoOpen]);
 
   return (
-    <section className="relative min-h-screen pb-12 lg:h-[1105px]  " dir="rtl">
+    <section className="relative min-h-screen pt-2 pb-10 lg:h-[1005px]  " dir="rtl">
       <Image
         src={bgImage}
         alt="HMF Consulting Engineering"
@@ -50,8 +50,8 @@ export default function HeroSection({ children }: { children: React.ReactNode })
         {children}
 
         {/* First Part  */}
-        <div className="px-2 md:px-8 flex flex-col text-white ">
-          <div className="flex items-center py-6 md:py-10 lg:py-18  gap-4 ">
+        <div className="px-2 md:px-8 lg:px-16 flex flex-col text-white ">
+          <div className="flex items-center px-2 py-6 md:py-10 lg:py-18  gap-4 ">
             <button
               onClick={() => setIsVideoOpen(true)}
               aria-label="تشغيل الفيديو"
@@ -72,7 +72,7 @@ export default function HeroSection({ children }: { children: React.ReactNode })
                 <h1 className="mb-4 text-4xl font-bold">
                   {HERO_CONTENT.title}
                 </h1>
-                <p className="max-w-xl lg:max-w-6xl text-[14px] lg:text-xl mx-auto md:mx-0 md:leading-10 leading-8">
+                <p className="max-w-xl lg:max-w-4xl text-lg lg:text-xl mx-auto md:mx-0 lg:leading-9 md:leading-8 sm:leading-7">
                   {HERO_CONTENT.description}
                 </p>
               </div>
@@ -104,7 +104,7 @@ export default function HeroSection({ children }: { children: React.ReactNode })
 
 
           {/* Last Part */}
-          <div className="flex gap-2 lg:gap-10 mt-12 lg:mt-22 justify-center lg:justify-start text-nowrap">
+          <div className="flex gap-2 lg:gap-17 mt-12 lg:mt-22 justify-center lg:justify-start text-nowrap">
             {STATS.map((item) => (
               <div key={item.label} className="text-center sm:text-xl md:text-[24px] font-medium flex flex-col items-center gap-2 md:gap-4 lg:gap-6">
                 <p className="px-2 sm:px-6 md:px-10">{item.label}</p>

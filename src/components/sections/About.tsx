@@ -29,18 +29,17 @@ export default function About() {
                 </div>
                 <div className="md:w-1/2 p-5 relative ">
                     <div className="absolute top-[10px] left-[10px] w-[43%] h-[56.3%] border-[2.57px] border-black -z-10" />
-                    <Image src="/about.jpg" alt="عن الشركة" width={600} height={600} style={{ height: 'auto' }} className="rounded-[5.14px] " />
+                    <Image src="/about.jpg" alt="عن الشركة" width={600} height={600} style={{ height: 'auto' }} className="rounded-[5.14px] w-full " />
                     <div className="" >
-                        <div className="absolute bottom-[15px] right-[10px] w-[140px] h-[108px] rounded-[5.14px] border-[6.43px] border-white overflow-hidden">
+                        <div className="absolute bottom-[15px] right-[15px] w-[140px] h-[108px] rounded-[5.14px] border-[6.43px] border-white overflow-hidden">
                             <Image src="/hero-backgroundN2.jpg" alt="صورة المشروع" fill sizes="140px" className="object-cover" />
                         </div>
                     </div>
                 </div>
-
             </div>
 
 
-            <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 lg:gap-11 justify-items-center" role="list">
+            <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 justify-items-center" role="list">
                 {ABOUT_CARDS.map((card, index) => (
                     <div
                         key={index}

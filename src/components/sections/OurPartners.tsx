@@ -15,13 +15,13 @@ export default function OurPartners() {
                     title={OUR_PARTNERS_CONTENT.title}
                     description={OUR_PARTNERS_CONTENT.subtitle}
                     description2={OUR_PARTNERS_CONTENT.description}
-                    className="items-center text-center max-w-3xl"
+                    className="items-center text-center "
                     textColor="text-black"
                 />
             </div>
             <div className="flex">
                 {OUR_PARTNERS_CONTENT.partners.map((partner) => (
-                    <div key={partner.id} className="group w-[410px] h-[410px] relative overflow-hidden cursor-pointer">
+                    <div key={partner.id} className="group w-full h-[410px] relative overflow-hidden cursor-pointer">
                         {/* Black content layer - slides UP from below on hover */}
                         <div className="absolute inset-0 flex flex-col items-center justify-center bg-black text-white z-0 translate-y-full group-hover:translate-y-0 transition-all duration-700">
                             <Image src={partner.image} width={300} height={300} alt={partner.alt} className="mb-4 brightness-0 invert" />
