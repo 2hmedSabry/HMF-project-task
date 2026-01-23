@@ -1,7 +1,5 @@
-import { NAV_LINKS } from "@/constants/navLinks";
-import { MailIcon } from "./icons/MailIcon";
-import { SearchIcon } from "./icons/SearchIcon";
-import { WhatsAppIcon } from "./icons/WhatsAppIcon";
+import { NAV_LINKS } from "@/constants/navigation/navLinks";
+import { MailIcon, SearchIcon, WhatsAppHeaderIcon } from "@/components/icons";
 
 interface MobileNavProps {
   isMobileMenuOpen: boolean;
@@ -44,7 +42,7 @@ export default function MobileNav({ isMobileMenuOpen }: MobileNavProps) {
             className="p-3 text-white/80 hover:text-green-400 rounded-full hover:bg-white/10 transition-all duration-300 border border-white/20"
             aria-label="WhatsApp"
           >
-            <WhatsAppIcon
+            <WhatsAppHeaderIcon
             />
           </a>
           <a

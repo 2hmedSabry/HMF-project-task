@@ -2,16 +2,13 @@
 
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { LogoIcon } from "./icons/LogoIcon";
-import { InitIcon } from "./icons/InitIcon";
-import { SearchIcon } from "./icons/SearchIcon";
+import { LogoIcon, InitIcon, SearchIcon } from "@/components/icons";
 import { CONTACTS } from "@/constants/contact";
 import DesktopNav from "./DesktopNav";
 import MobileNav from "./MobileNav";
 import Link from "next/link";
-import Nav from "@/components/ui/Nav";
-import FadeAnimation from "@/components/ui/FadeAnimation";
-import Button from "@/components/ui/Button";
+import { Nav, Button } from "@/components/ui";
+import { FadeAnimation } from "@/components/ui/animations";
 
 
 

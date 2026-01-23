@@ -1,6 +1,6 @@
 'use client'
-import AnimatedNav from "@/components/ui/AnimatedNav";
-import { NAV_LINKS } from "@/constants/navLinks";
+import { AnimatedNav } from "@/components/ui/animations";
+import { NAV_LINKS } from "@/constants/navigation/navLinks";
 
 export default function DesktopNav() {
   return (
