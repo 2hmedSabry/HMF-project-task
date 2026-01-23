@@ -1,15 +1,8 @@
-import React from "react"
 import { Button } from "@/components/ui"
 import { LogoIcon } from "@/components/icons"
 import { FOOTER_CONTENT } from "@/constants/content/footer"
-import { CONTACTS } from "@/constants/contact"
 import Link from "next/link"
 import {
-    WhatsAppIcon,
-    YoutubeIcon,
-    InstagramIcon,
-    FacebookIcon,
-    ArrowIcon,
     ChevronLeftIcon,
     LocationIcon,
     EmailIcon,
@@ -23,15 +16,19 @@ import { FaArrowLeft } from "react-icons/fa"
 export default function Footer() {
 
     return (
-        <footer className="bg-black text-white min-h-screen">
-            <div className="container mx-auto py-10 pt-19 flex flex-row gap-5">
-                <div className="w-fit flex flex-col justify-between gap-29">
+        <footer className="bg-black text-white">
+            <div className="container mx-auto py-10 pt-19 flex flex-col lg:flex-row p-2 gap-5">
+                <div className="flex flex-col justify-between gap-12">
                     <div className="flex flex-col gap-6 p-2">
                         <div className="min-w-[150px] min-h-[78px] "><LogoIcon /></div>
-                        <p className="w-[457px] text-[18px] ">{FOOTER_CONTENT.about.description}</p>
+                        <p className="w-full lg:w-[457px] text-[18px] ">{FOOTER_CONTENT.about.description}</p>
 
                         <SlideUpAnimation>
-                            <Link href={FOOTER_CONTENT.about.ctaLink || "#"} className="text-[#B2B2B2] pt-1  text-xl font-bold inline-flex items-center gap-2 " >{FOOTER_CONTENT.about.ctaText}<FooterArrowIcon />
+                            <Link
+                                href={FOOTER_CONTENT.about.ctaLink || "#"}
+                                className="text-[#B2B2B2] pt-1 text-xl font-bold inline-flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-sm"
+                            >
+                                {FOOTER_CONTENT.about.ctaText}<FooterArrowIcon />
                             </Link>
                         </SlideUpAnimation>
 
@@ -43,7 +40,8 @@ export default function Footer() {
                                     target="_blank"
                                     className="p-1 transition-all duration-300 
                                         group-hover/social:opacity-50 group-hover/social:translate-x-[4px] group-hover/social:translate-y-[4px]
-                                        hover:opacity-100! hover:translate-x-[3px]! hover:translate-y-[4px]! hover:scale-120"
+                                        hover:opacity-100! hover:translate-x-[3px]! hover:translate-y-[4px]! hover:scale-120
+                                        focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-full"
                                     aria-label={social.ariaLabel}
                                 >
                                     {social.icon}
@@ -53,27 +51,27 @@ export default function Footer() {
                     </div>
                     <div className="flex flex-col gap-6">
                         <span className="font-bold">{FOOTER_CONTENT.newsletter.title}</span>
-                        <div className="flex flex-row relative">
+                        <div className="flex flex-row relative max-w-full">
                             <input
                                 id="newsletter-email"
-                                className="bg-white text-black w-[530px] h-full p-5 rounded-[81.04px]"
+                                className="bg-white text-black w-full lg:w-[530px] h-full p-5 rounded-[81.04px]"
                                 type="email"
                                 placeholder="البريد الالكتروني"
                                 aria-label="البريد الالكتروني للاشتراك في النشرة البريدية"
                             />
-                            <Button href="/" className="absolute left-[14%] top-[-11px] w-[117px] h-[60px] bg-black text-white rounded-[81.04px] hover:scale-90 transition-all duration-300" icon={<FaArrowLeft size={20} />} aria-label="اشتراك في النشرة البريدية" />
+                            <Button href="/" className="absolute left-[1%] lg:left-[14%] top-[-11px] w-[117px] h-[60px] bg-black text-white rounded-[81.04px] hover:scale-90 transition-all duration-300" icon={<FaArrowLeft size={20} />} aria-label="اشتراك في النشرة البريدية" />
                         </div>
-                        <span className="text-[#B2B2B2] text-sm w-[439px]">{FOOTER_CONTENT.newsletter.disclaimer}</span>
+                        <span className="text-[#B2B2B2] text-sm w-full lg:w-[439px]">{FOOTER_CONTENT.newsletter.disclaimer}</span>
                     </div>
 
-                    <div className="text-sm">
+                    <div className="text-sm flex flex-col items-center lg:items-start lg:flex-row gap-2 lg:gap-0">
                         <span className="text-[#B2B2B2]">{FOOTER_CONTENT.copyright.text}</span>
                         <span>{FOOTER_CONTENT.copyright.developer}</span>
                     </div>
                 </div>
 
-                <div className="w-fit flex flex-col gap-13">
-                    <div className="flex flex-row justify-between gap-22">
+                <div className="w-full lg:w-fit flex flex-col gap-13">
+                    <div className="flex flex-col sm:flex-row justify-between gap-10 lg:gap-22">
                         <div className="flex flex-col gap-4 py-2 text-xl">
                             <span className="text-2xl font-bold">{FOOTER_CONTENT.quickLinks.title}</span>
                             {FOOTER_CONTENT.quickLinks.links.map((link, index) => (
@@ -119,7 +117,6 @@ export default function Footer() {
                     </div>
                 </div>
             </div>
-
         </footer>
     )
 }

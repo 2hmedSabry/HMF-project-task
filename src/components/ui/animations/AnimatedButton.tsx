@@ -15,7 +15,7 @@ export default function AnimatedButton({ href, text, icon, className = "" , widt
     return (
         <Link
             href={href}
-            className={`group flex items-center justify-center gap-0.5 rounded-[12px] font-bold transition-all relative overflow-hidden ${className}`}
+            className={`mx-auto lg:mx-0 my-4 lg:my-0 mt-0 md:mt-4 group flex items-center justify-center gap-0.5 rounded-[12px] font-bold transition-all relative overflow-hidden ${className}`}
             style={{
                 width: width,
                 height: height,

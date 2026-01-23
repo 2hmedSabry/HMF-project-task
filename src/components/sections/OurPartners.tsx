@@ -2,13 +2,14 @@
 
 import Tag from "@/components/ui/Tag";
 import Image from "next/image";
+import { Section } from "@/components/ui";
 import NavigationArrows from "@/components/ui/NavigationArrows";
 import { OUR_PARTNERS_CONTENT } from "@/constants/content/ourPartners";
 import SectionHeader from "@/components/ui/SectionHeader";
 
 export default function OurPartners() {
     return (
-        <section className="min-h-screen container mx-auto py-[60px] flex flex-col gap-12">
+        <Section id="ourPartners" containerClassName="flex flex-col gap-12">
             <div className="flex flex-col items-center w-full">
                 <SectionHeader
                     title={OUR_PARTNERS_CONTENT.title}
@@ -41,6 +42,6 @@ export default function OurPartners() {
                     onNext={() => console.log('Next')}
                 />
             </div>
-        </section>
+        </Section>
     );
 }

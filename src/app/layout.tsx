@@ -32,7 +32,15 @@ export default function RootLayout({
   return (
     <html lang="ar" dir="rtl">
       <body className={`${jannaLT.className} antialiased bg-[#F7F6F6]`}>
-        {children}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:right-4 focus:z-50 focus:bg-black focus:text-white focus:p-4 focus:rounded-md"
+        >
+          الانتقال إلى المحتوى الرئيسي
+        </a>
+        <main id="main-content">
+          {children}
+        </main>
       </body>
     </html>
   );

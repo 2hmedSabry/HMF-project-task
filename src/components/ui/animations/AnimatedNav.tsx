@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 import { useState, useRef, useEffect, useCallback, useLayoutEffect } from "react";
 import { ChevronDown } from "lucide-react";
 import NavLinkAnimation from "./NavLinkAnimation";
+import Nav from "../Nav";
 
 
 interface SubLink {
@@ -92,17 +93,19 @@ export default function AnimatedNav({
     const isBgClass = lineColor.startsWith('bg-');
 
     return (
-        <nav
+        <Nav
             onMouseLeave={() => {
                 setHoveredIndex(null);
                 setOpenDropdown(null);
             }}
-            className={`hidden lg:flex items-center ${navBorderColor} rounded-[100px] px-3 relative h-16 ${navClassName}`}
+            borderColor={navBorderColor}
+            className={`flex items-center rounded-[100px] 
+            px-3 relative h-16 ${navClassName}`}
             dir={dir}
         >
             <div
                 ref={containerRef}
-                className="flex items-center gap-1 flex-1 justify-between relative h-full"
+                className="flex items-center gap-5 lg:gap-1 flex-1 justify-between relative h-full"
             >
 
                 {/* Only add defaultField to links if it exists - onClick: undefined added to match NavLink type */}
@@ -129,7 +132,7 @@ export default function AnimatedNav({
                                             link.onClick();
                                         }
                                     }}
-                                    className={`relative text-xl font-bold z-10 flex items-center gap-1
+                                    className={`relative text-xl font-bold z-10 flex items-center gap-0 md:gap-1 
                                     ${textColor}
                                     ${linkClassName}`}
                                 >
@@ -173,6 +176,6 @@ export default function AnimatedNav({
                     }}
                 />
             </div>
-        </nav>
+        </Nav>
     );
 }

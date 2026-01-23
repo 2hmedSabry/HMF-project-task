@@ -41,10 +41,9 @@ export default function MediaSection() {
     return (
         <section className="min-h-screen container mx-auto py-[60px] flex flex-col gap-8" dir="rtl">
             {/* Header row with title and nav */}
-            <div className="flex items-center justify-between mb-8">
-                <h2 className="text-2xl font-bold" dangerouslySetInnerHTML={{ __html: MEDIA_SECTION_CONTENT.title }} />
-                <div className="absolute left-1/2 -translate-x-1/2">
-
+            <div className="flex flex-col md:flex-row items-center justify-between mb-8 ">
+                <h2 className=" hidden lg:block text-xl lg:text-2xl font-bold" dangerouslySetInnerHTML={{ __html: MEDIA_SECTION_CONTENT.title }} />
+                <div className="lg:absolute md:left-1/2 md:-translate-x-1/2">
                     {/* PROBLEM FIXED: lineColor was "px-1 py-5 font-bold text-[20px] cursor-pointer" which are CSS classes, NOT a color!
                     The animated line needs a color value like "bg-black" or "#000000" to be visible */}
                     <AnimatedNav
@@ -68,7 +67,7 @@ export default function MediaSection() {
             <div className="overflow-visible">
                 <div className="flex flex-row-reverse gap-8">
                     {/* Main Card (current) */}
-                    <div className="shrink-0 flex flex-row items-center bg-white rounded-[32px] w-[1028px] h-[442px]">
+                    <div className="shrink-0 flex flex-row items-center bg-white rounded-[32px] w-full lg:w-[1028px] lg:h-[442px]">
                         <div className={`w-[50%] flex flex-col p-8 gap-6 transition-opacity duration-300 ${isAnimating ? 'opacity-0' : 'opacity-100'}`}>
                             <div className="flex flex-col gap-2">
                                 <h3 className="text-2xl font-bold">{currentCard.title}</h3>

@@ -4,10 +4,9 @@ import { useState } from "react";
 import Button from "@/components/ui/Button";
 import { ABOUT_CARDS, ABOUT_CONTENT } from "@/constants/content/about";
 import Image from "next/image";
-import Tag from "@/components/ui/Tag";
-import { AnimatedButton } from "@/components/ui/animations";
-import { MdOutlineKeyboardDoubleArrowLeft } from "react-icons/md";
+import { Section } from "@/components/ui";
 import SectionHeader from "@/components/ui/SectionHeader";
+import AboutCard from "@/components/ui/cards/AboutCard";
 
 
 export default function About() {
@@ -17,9 +16,9 @@ export default function About() {
     const isFirstCardReversed = hoveredCard === 0 || hoveredCard === 1 || hoveredCard === 2;
 
     return (
-        <section id="about" className="min-h-screen container mx-auto py-10">
-            <div className="flex flex-row items-center justify-between">
-                <div className="w-1/2 p-5 flex flex-col gap-2">
+        <Section id="about">
+            <div className="flex md:flex-row flex-col-reverse items-center justify-between  gap-8">
+                <div className="md:w-1/2 lg:p-5 flex flex-col gap-2">
                     <SectionHeader
                         title={ABOUT_CONTENT.title}
                         description={ABOUT_CONTENT.description}
@@ -28,7 +27,7 @@ export default function About() {
                         ctaLink={ABOUT_CONTENT.ctaLink}
                     />
                 </div>
-                <div className="w-1/2 p-5 relative ">
+                <div className="md:w-1/2 p-5 relative ">
                     <div className="absolute top-[10px] left-[10px] w-[43%] h-[56.3%] border-[2.57px] border-black -z-10" />
                     <Image src="/about.jpg" alt="عن الشركة" width={600} height={600} style={{ height: 'auto' }} className="rounded-[5.14px] " />
                     <div className="" >
@@ -41,39 +40,23 @@ export default function About() {
             </div>
 
 
-            <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[46px]">
-                {ABOUT_CARDS.map((card, index) => {
-                    // Determine if this card should show reversed colors
-                    const isReversed = index === 0 ? isFirstCardReversed : hoveredCard === index;
-
-                    return (
-                        <div
-                            key={index}
+            <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 lg:gap-11 justify-items-center" role="list">
+                {ABOUT_CARDS.map((card, index) => (
+                    <div
+                        key={index}
+                        className={`w-full flex justify-center ${index === 2 ? "md:col-span-2 lg:col-span-1" : ""}`}
+                    >
+                        <AboutCard
+                            index={index}
+                            card={card}
+                            isReversed={index === 0 ? isFirstCardReversed : hoveredCard === index}
                             onMouseEnter={() => setHoveredCard(index)}
                             onMouseLeave={() => setHoveredCard(null)}
-                            className={`group flex flex-row items-center justify-center gap-2 rounded-lg px-4 cursor-pointer transition-all duration-300 ease-in-out ${index === 0
-                                ? isReversed
-                                    ? 'bg-white text-black'
-                                    : 'bg-black text-white'
-                                : isReversed
-                                    ? 'bg-black text-white'
-                                    : 'bg-white text-black'
-                                }`}
-                            style={index !== 0 ? { boxShadow: '0px 0px 2px 0px #00000040' } : undefined}
-                        >
-                            <card.icon />
-                            <div>
-                                <h3 className="mb-4 text-2xl">{card.title}</h3>
-                                <p className={`text-[13px] leading-[16px] transition-colors duration-300 ${index === 0
-                                    ? isReversed ? 'text-[#848484]' : 'text-white'
-                                    : isReversed ? 'text-white' : 'text-[#848484]'
-                                    }`}>{card.description}</p>
-                            </div>
-                        </div>
-                    );
-                })}
+                        />
+                    </div>
+                ))}
             </div>
 
-        </section>
+        </Section>
     )
 }

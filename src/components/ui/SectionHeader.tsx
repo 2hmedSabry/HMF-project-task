@@ -1,6 +1,7 @@
 import Tag from "@/components/ui/Tag";
 import { AnimatedButton } from "@/components/ui/animations";
 import { MdOutlineKeyboardDoubleArrowLeft } from "react-icons/md";
+import { Typography } from "@/components/ui";
 
 interface SectionHeaderProps {
     title: string;
@@ -24,8 +25,14 @@ export default function SectionHeader({
     return (
         <div className={`flex flex-col gap-2 ${className}`}>
             <Tag>{title}</Tag>
-            <h2 className={`text-[40px] font-bold ${textColor}`} dangerouslySetInnerHTML={{ __html: description }} />
-            {description2 && <p className={`text-[20px] leading-[32px] ${textColor === "text-white" ? "text-white/80" : "text-gray-600"}`}>{description2}</p>}
+            <Typography variant="h2" as="h2" className={textColor}>
+                <span dangerouslySetInnerHTML={{ __html: description }} />
+            </Typography>
+            {description2 && (
+                <Typography variant="body" className={textColor === "text-white" ? "text-white/80" : "text-gray-600"}>
+                    {description2}
+                </Typography>
+            )}
 
             {cta && ctaLink && (
                 <AnimatedButton

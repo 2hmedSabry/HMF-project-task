@@ -34,7 +34,7 @@ export default function NavigationArrows({
     const nextArrowColor = isAtEnd ? '#9CA3AF' : 'black';
 
     return (
-        <div className={`inline-flex items-center border border-black rounded-full overflow-hidden w-[259px] h-[99px] transition-transform duration-200 ${activeButton === 'previous' ? 'translate-x-0.5' : activeButton === 'next' ? '-translate-x-0.5' : ''} ${className}`}>
+        <div className={`inline-flex items-center border border-black rounded-2xl lg:rounded-full  overflow-hidden w-[150px] lg:w-[259px] h-[50px] lg:h-[99px] transition-transform duration-200 ${activeButton === 'previous' ? 'translate-x-0.5' : activeButton === 'next' ? '-translate-x-0.5' : ''} ${className}`}>
             {/* Back Button */}
             <button
                 onClick={handlePrevious}

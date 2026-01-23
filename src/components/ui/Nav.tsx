@@ -1,7 +1,9 @@
-export default function Nav({className, children , dir }: {className?: string, children: React.ReactNode, dir?: string,}) {
+export default function Nav(
+    { className = '', children, dir, borderColor = 'border border-white/50' , padding = 'px-3 ' ,onMouseLeave }
+    : { className?: string, children: React.ReactNode, dir?: string, borderColor?: string , padding?: string , onMouseLeave?: () => void }) {
     return (
-      <nav className={`hidden lg:flex items-center justify-between border border-white/50 rounded-[100px] px-5 ${className}`} dir={dir}>
-           {children}
+        <nav className={`flex items-center justify-between  rounded-[100px] relative ${className} ${borderColor} ${padding}`} dir={dir} onMouseLeave={onMouseLeave}>
+            {children}
         </nav>
     );
 }

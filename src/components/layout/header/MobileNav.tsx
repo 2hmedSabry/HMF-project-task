@@ -19,7 +19,7 @@ export default function MobileNav({ isMobileMenuOpen }: MobileNavProps) {
                 href={link.href}
                 className="block px-4 py-3 text-base font-medium text-white/90 hover:text-white hover:bg-white/10 rounded-xl transition-all duration-300 text-right"
               >
-                {link.label}
+                {link.label}d
               </a>
             </li>
           ))}
