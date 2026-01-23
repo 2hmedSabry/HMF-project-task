@@ -1,5 +1,6 @@
 import React from "react";
 import { AboutCard as AboutCardType } from "@/types/content";
+import { Typography } from "@/components/ui";
 
 interface AboutCardProps {
     card: AboutCardType;
@@ -38,13 +39,13 @@ export default function AboutCard({
                     <card.icon />
                 </div>
                 <div>
-                    <h3 className="mb-2 text-2xl font-bold">{card.title}</h3>
-                    <p className={`text-[13px] leading-[16px] transition-colors duration-300 ${index === 0
+                    <Typography variant="h3" className="mb-2">{card.title}</Typography>
+                    <Typography variant="body-small" className={`transition-colors duration-300 ${index === 0
                         ? isReversed ? 'text-[#848484]' : 'text-white'
                         : isReversed ? 'text-white' : 'text-[#848484]'
                         }`}>
                         {card.description}
-                    </p>
+                    </Typography>
                 </div>
             </div>
         </div>

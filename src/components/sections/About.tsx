@@ -17,8 +17,8 @@ export default function About() {
 
     return (
         <Section id="about">
-            <div className="flex md:flex-row flex-col-reverse items-center justify-between  gap-8">
-                <div className="md:w-1/2 lg:p-5 flex flex-col gap-2">
+            <div className="flex md:flex-row flex-col-reverse items-center justify-between gap-8 lg:gap-12">
+                <div className="md:w-1/2 lg:p-5 flex flex-col gap-4">
                     <SectionHeader
                         title={ABOUT_CONTENT.title}
                         description={ABOUT_CONTENT.description}
@@ -39,7 +39,7 @@ export default function About() {
             </div>
 
 
-            <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 justify-items-center" role="list">
+            <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 justify-items-center" role="list">
                 {ABOUT_CARDS.map((card, index) => (
                     <div
                         key={index}

@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { ServiceCard as ServiceCardType } from "@/types/content";
+import { Typography } from "@/components/ui";
 
 interface ServiceCardProps {
     service: ServiceCardType;
@@ -39,18 +40,18 @@ export default function ServiceCard({ service, index }: ServiceCardProps) {
             py-3 px-4 flex-1 flex flex-col 
             transition-all duration-500 
             ease-in-out overflow-hidden">
-                <h3 id={`service-title-${index}`} className="font-bold text-[20px]">
+                <Typography variant="h3" id={`service-title-${index}`}>
                     {service.title}
-                </h3>
+                </Typography>
                 {/* Description - shows ~35 chars by default, full text on hover */}
-                <p className="py-2 font-medium text-text-description transition-all duration-500">
+                <Typography variant="body-small" className="py-2 font-medium text-text-description">
                     <span className="group-hover:hidden line-clamp-2">
                         {service.description.slice(0, 35)}...
                     </span>
                     <span className="hidden group-hover:inline">
                         {service.description}
                     </span>
-                </p>
+                </Typography>
             </div>
         </div>
     );

@@ -8,7 +8,7 @@ import PartnerCard from "@/components/ui/cards/PartnerCard";
 
 export default function OurPartners() {
     return (
-        <Section id="ourPartners" containerClassName="flex flex-col gap-12">
+        <Section id="ourPartners" containerClassName="flex flex-col gap-8 lg:gap-12">
             <div className="flex flex-col items-center w-full">
                 <SectionHeader
                     title={OUR_PARTNERS_CONTENT.title}

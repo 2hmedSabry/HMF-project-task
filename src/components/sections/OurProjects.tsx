@@ -38,9 +38,9 @@ export default function OurProjects() {
     const previousProject = previousIndex !== null ? OUR_PROJECTS_CONTENT.list[previousIndex] : null;
 
     return (
-        <section id="ourProjects" className="min-h-screen container mx-auto py-10 px-5 md:px-0">
+        <section id="ourProjects" className="min-h-screen container mx-auto py-16 md:py-24 px-5 md:px-0">
 
-            <div className="flex flex-col justify-between items-center gap-16">
+            <div className="flex flex-col justify-between items-center gap-12 lg:gap-16">
                 {/* PROBLEM FIXED: lineColor was "px-1 py-5 font-bold text-[20px] cursor-pointer" which are CSS classes, NOT a color!
                     The animated line needs a color value like "bg-black" or "#000000" to be visible */}
                 <AnimatedNav

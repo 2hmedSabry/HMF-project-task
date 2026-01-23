@@ -11,24 +11,30 @@ import {
 } from "@/components/icons"
 import { SlideUpAnimation } from "@/components/ui/animations"
 import { FaArrowLeft } from "react-icons/fa"
+import { Typography } from "@/components/ui"
 import FooterLinkColumn from "@/components/ui/FooterLinkColumn"
 
 export default function Footer() {
 
     return (
         <footer className="bg-black text-white">
-            <div className="container mx-auto py-10 pt-19 flex flex-col lg:flex-row p-2 gap-5">
+            <div className="container mx-auto py-16 md:py-24 flex flex-col lg:flex-row p-2 gap-8 lg:gap-12">
                 <div className="flex flex-col justify-between gap-12">
                     <div className="flex flex-col gap-6 p-2">
                         <div className="min-w-[150px] min-h-[78px] "><LogoIcon /></div>
-                        <p className="w-full lg:w-[457px] text-[18px] ">{FOOTER_CONTENT.about.description}</p>
+                        <Typography variant="body" className="w-full lg:w-[457px]">
+                            {FOOTER_CONTENT.about.description}
+                        </Typography>
 
                         <SlideUpAnimation>
                             <Link
                                 href={FOOTER_CONTENT.about.ctaLink || "#"}
-                                className="text-[#B2B2B2] pt-1 text-xl font-bold inline-flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-sm"
+                                className="text-[#B2B2B2] pt-1 inline-flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-sm"
                             >
-                                {FOOTER_CONTENT.about.ctaText}<FooterArrowIcon />
+                                <Typography variant="body" className="font-bold">
+                                    {FOOTER_CONTENT.about.ctaText}
+                                </Typography>
+                                <FooterArrowIcon />
                             </Link>
                         </SlideUpAnimation>
 
@@ -50,7 +56,9 @@ export default function Footer() {
                         </div>
                     </div>
                     <div className="flex flex-col gap-6">
-                        <span className="font-bold">{FOOTER_CONTENT.newsletter.title}</span>
+                        <Typography variant="body" className="font-bold">
+                            {FOOTER_CONTENT.newsletter.title}
+                        </Typography>
                         <div className="flex flex-row relative max-w-full">
                             <input
                                 id="newsletter-email"
@@ -61,12 +69,18 @@ export default function Footer() {
                             />
                             <Button href="/" className="absolute left-[1%] lg:left-[14%] top-[-11px] w-[117px] h-[60px] bg-black text-white rounded-[81.04px] hover:scale-90 transition-all duration-300" icon={<FaArrowLeft size={20} />} aria-label="اشتراك في النشرة البريدية" />
                         </div>
-                        <span className="text-[#B2B2B2] text-sm w-full lg:w-[439px]">{FOOTER_CONTENT.newsletter.disclaimer}</span>
+                        <Typography variant="body-small" className="text-[#B2B2B2] w-full lg:w-[439px]">
+                            {FOOTER_CONTENT.newsletter.disclaimer}
+                        </Typography>
                     </div>
 
-                    <div className="text-sm flex flex-col items-center lg:items-start lg:flex-row gap-2 lg:gap-0">
-                        <span className="text-[#B2B2B2]">{FOOTER_CONTENT.copyright.text}</span>
-                        <span>{FOOTER_CONTENT.copyright.developer}</span>
+                    <div className="flex flex-col items-center lg:items-start lg:flex-row gap-2 lg:gap-0">
+                        <Typography variant="body-small" className="text-[#B2B2B2]">
+                            {FOOTER_CONTENT.copyright.text}
+                        </Typography>
+                        <Typography variant="body-small" className="ms-1">
+                            {FOOTER_CONTENT.copyright.developer}
+                        </Typography>
                     </div>
                 </div>
 
@@ -82,16 +96,17 @@ export default function Footer() {
                         />
                     </div>
                     <div className="flex flex-col gap-3">
-                        <span className="text-2xl mb-1 font-bold p-1">تواصل معنا</span>
+                        <Typography variant="h3" className="mb-1 p-1">تواصل معنا</Typography>
                         <span className="inline-flex items-center gap-1 ">
                             <LocationIcon />
                             {FOOTER_CONTENT.contact.address}
                         </span>
                         <SlideUpAnimation>
-                            <Link href={FOOTER_CONTENT.contact.directionsLink || "#"} className="text-xl font-bold inline-flex items-center p-2 gap-1 mr-12 text-[#B2B2B2] hover:text-white transition-colors">
-                                {FOOTER_CONTENT.contact.directionsText}
+                            <Link href={FOOTER_CONTENT.contact.directionsLink || "#"} className="inline-flex items-center p-2 gap-1 mr-12 text-[#B2B2B2] hover:text-white transition-colors">
+                                <Typography variant="body" className="font-bold">
+                                    {FOOTER_CONTENT.contact.directionsText}
+                                </Typography>
                                 <FooterArrowIcon />
-
                             </Link>
                         </SlideUpAnimation>
                         <SlideUpAnimation>

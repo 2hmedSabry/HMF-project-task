@@ -3,6 +3,7 @@ import { ProjectLocationIcon } from "@/components/icons"
 import { AnimatedButton } from "@/components/ui/animations"
 import { MdOutlineKeyboardDoubleArrowLeft } from "react-icons/md"
 import { ProjectItem } from "@/types/content"
+import { Typography } from "@/components/ui"
 
 interface ProjectCardContentProps {
     project: ProjectItem;
@@ -20,15 +21,15 @@ export default function ProjectCardContent({ project }: ProjectCardContentProps)
                         height={100}
                         className="opacity-50 w-[150px] h-[100px] object-cover"
                     />
-                    <span className="flex flex-row items-center gap-1 text-lg font-bold">
+                    <Typography variant="body" as="span" className="flex flex-row items-center gap-1 font-bold">
                         <ProjectLocationIcon />
                         مدينة {project.city}
-                    </span>
+                    </Typography>
                 </div>
-                <h2 className="text-2xl font-bold">{project.projectName}</h2>
-                <p className="text-lg lg:pb-8 sm:w-[528px] sm:h-[132px] leading-8">
+                <Typography variant="h3">{project.projectName}</Typography>
+                <Typography variant="body" className="lg:pb-8 sm:w-[528px] sm:h-[132px]">
                     {project.description}
-                </p>
+                </Typography>
 
                 <AnimatedButton
                     href={project.ctaLink}

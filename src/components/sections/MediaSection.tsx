@@ -4,6 +4,7 @@ import { MEDIA_SECTION_CONTENT } from "@/constants/content/media";
 import { AnimatedNav } from "@/components/ui/animations";
 import NavigationArrows from "@/components/ui/NavigationArrows";
 import MediaCard from "@/components/ui/cards/MediaCard";
+import { Typography } from "@/components/ui";
 
 export default function MediaSection() {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -38,10 +39,12 @@ export default function MediaSection() {
     const nextCard = MEDIA_SECTION_CONTENT.cards[nextCardIndex];
 
     return (
-        <section className="min-h-screen container mx-auto py-[60px] flex flex-col gap-8" dir="rtl">
+        <section className="min-h-screen container mx-auto py-16 md:py-24 flex flex-col gap-8 lg:gap-12" dir="rtl">
             {/* Header row with title and nav */}
             <div className="flex flex-col md:flex-row items-center justify-between mb-8 ">
-                <h2 className=" hidden lg:block text-xl lg:text-2xl font-bold" dangerouslySetInnerHTML={{ __html: MEDIA_SECTION_CONTENT.title }} />
+                <Typography variant="h2" className="hidden lg:block">
+                    <span dangerouslySetInnerHTML={{ __html: MEDIA_SECTION_CONTENT.title }} />
+                </Typography>
                 <div className="lg:absolute md:left-1/2 md:-translate-x-1/2">
                     {/* PROBLEM FIXED: lineColor was "px-1 py-5 font-bold text-[20px] cursor-pointer" which are CSS classes, NOT a color!
                     The animated line needs a color value like "bg-black" or "#000000" to be visible */}
@@ -64,7 +67,7 @@ export default function MediaSection() {
             </div>
             {/* Cards container - shows 2 cards with fade effect */}
             <div className="overflow-visible">
-                <div className="flex flex-row-reverse gap-8">
+                <div className="flex flex-row-reverse gap-8 lg:gap-12">
                     {/* Main Card (current) */}
                     <MediaCard card={currentCard} isAnimating={isAnimating} />
 

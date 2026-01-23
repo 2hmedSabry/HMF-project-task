@@ -6,6 +6,7 @@ import { STATS } from "@/constants/status";
 import { HERO_CONTENT } from "@/constants/content/hero";
 import { MdOutlineKeyboardDoubleArrowLeft } from "react-icons/md";
 import { AnimatedButton, AutoWrittenText } from "@/components/ui/animations";
+import { Typography } from "@/components/ui";
 import HeroThumbnail from "@/components/ui/HeroThumbnail";
 import HeroStatsRow from "@/components/ui/HeroStatsRow";
 import HeroVideoModal from "@/components/ui/HeroVideoModal";
@@ -40,22 +41,23 @@ export default function HeroSection({ children }: { children: React.ReactNode })
             >
               <PlayIcon />
             </button>
-            <AutoWrittenText
-              text="تشغيل الفيديو"
-              className="text-[24px] font-bold min-w-[150px]"
-            />
+            <Typography variant="h3" as="span" className="min-w-[150px]">
+              <AutoWrittenText
+                text="تشغيل الفيديو"
+              />
+            </Typography>
           </div>
           {/* Main Content */}
 
           <div className="flex flex-col md:flex-row md:justify-between text-center md:text-right pt-20">
             <div className="w-full md:w-2/3 flex flex-col gap-8">
               <div>
-                <h1 className="mb-4 text-4xl font-bold">
+                <Typography variant="h1" className="mb-4">
                   {HERO_CONTENT.title}
-                </h1>
-                <p className="max-w-xl lg:max-w-4xl text-lg lg:text-xl mx-auto md:mx-0 lg:leading-9 md:leading-8 sm:leading-7">
+                </Typography>
+                <Typography variant="body" className="max-w-xl lg:max-w-4xl mx-auto md:mx-0">
                   {HERO_CONTENT.description}
-                </p>
+                </Typography>
               </div>
 
               <AnimatedButton
