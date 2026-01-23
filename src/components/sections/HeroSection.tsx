@@ -1,37 +1,18 @@
 'use client'
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import { PlayIcon } from "@/components/icons";
 import { STATS } from "@/constants/status";
 import { HERO_CONTENT } from "@/constants/content/hero";
-import { X } from "lucide-react";
 import { MdOutlineKeyboardDoubleArrowLeft } from "react-icons/md";
 import { AnimatedButton, AutoWrittenText } from "@/components/ui/animations";
+import HeroThumbnail from "@/components/ui/HeroThumbnail";
+import HeroStatsRow from "@/components/ui/HeroStatsRow";
+import HeroVideoModal from "@/components/ui/HeroVideoModal";
 
 export default function HeroSection({ children }: { children: React.ReactNode }) {
   const [bgImage, setBgImage] = useState("/hero-backgroundN2.jpg");
   const [isVideoOpen, setIsVideoOpen] = useState(false);
-
-
-  // Handle ESC key to close video
-  useEffect(() => {
-    const handleEsc = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setIsVideoOpen(false);
-    };
-    window.addEventListener("keydown", handleEsc);
-    return () => window.removeEventListener("keydown", handleEsc);
-  }, []);
-
-  // Auto-close video after 15 seconds
-  useEffect(() => {
-    let timer: NodeJS.Timeout;
-    if (isVideoOpen) {
-      timer = setTimeout(() => {
-        setIsVideoOpen(false);
-      }, 15500); // 15 seconds + small buffer
-    }
-    return () => clearTimeout(timer);
-  }, [isVideoOpen]);
 
   return (
     <section className="relative min-h-screen pt-2 pb-10 lg:h-[1005px]  " dir="rtl">
@@ -86,61 +67,27 @@ export default function HeroSection({ children }: { children: React.ReactNode })
             </div>
 
             <div className="flex flex-row md:flex-col gap-4 mx-auto md:mx-0">
-              <div
-                className={`rounded-xl shadow-[0_0_10.4px_#ffffff80] cursor-pointer transition-transform hover:scale-105 ${bgImage === "/hero-backgroundN2.jpg" ? "ring-2 ring-white/50" : ""}`}
+              <HeroThumbnail
+                src="/hero-backgroundN2.jpg"
+                isActive={bgImage === "/hero-backgroundN2.jpg"}
                 onClick={() => setBgImage("/hero-backgroundN2.jpg")}
-              >
-                <Image src="/hero-backgroundN2.jpg" alt="Hero Banner" width={200} height={156} style={{ height: 'auto' }} className="rounded-xl" />
-              </div>
-              <div
-                className={`rounded-xl shadow-[0_0_10.4px_#ffffff80] cursor-pointer transition-transform hover:scale-105 ${bgImage === "/hero-backgroundN1.jpg" ? "ring-2 ring-white/50" : ""}`}
+              />
+              <HeroThumbnail
+                src="/hero-backgroundN1.jpg"
+                isActive={bgImage === "/hero-backgroundN1.jpg"}
                 onClick={() => setBgImage("/hero-backgroundN1.jpg")}
-              >
-                <Image src="/hero-backgroundN1.jpg" alt="Hero Banner" width={200} height={156} style={{ height: 'auto' }} className="rounded-xl" />
-              </div>
+              />
             </div>
           </div>
 
-
-
-          {/* Last Part */}
-          <div className="flex gap-2 lg:gap-17 mt-12 lg:mt-22 justify-center lg:justify-start text-nowrap">
-            {STATS.map((item) => (
-              <div key={item.label} className="text-center sm:text-xl md:text-[24px] font-medium flex flex-col items-center gap-2 md:gap-4 lg:gap-6">
-                <p className="px-2 sm:px-6 md:px-10">{item.label}</p>
-                <p className="px-2 sm:px-6 md:px-10">{item.value}</p>
-              </div>
-            ))}
-          </div>
+          <HeroStatsRow stats={STATS} />
         </div>
       </div>
 
-      {/* Full Page Video Container */}
-      {isVideoOpen && (
-        <div
-          className="fixed inset-0 z-100 flex items-center justify-center bg-black transition-opacity duration-500 animate-in fade-in"
-        >
-          {/* Close Button (Hidden by default based on request, but kept for accessibility unless you really want it gone) */}
-          <button
-            onClick={() => setIsVideoOpen(false)}
-            className="absolute top-8 right-8 z-110 p-4 text-white/50 hover:text-white transition-colors"
-            aria-label="إغلاق"
-          >
-            <X size={48} strokeWidth={1} />
-          </button>
-
-          {/* Full Screen Video - No Controls, Autoplay, Muted for Autoplay compliance */}
-          <div className="w-full h-full">
-            <iframe
-              className="w-full h-full pointer-events-none scale-110" // scale to hide potential thin edges
-              src="https://www.youtube.com/embed/Mh5LY4Mz15o?autoplay=1&controls=0&mute=1&loop=1&playlist=Mh5LY4Mz15o&modestbranding=1&showinfo=0&rel=0"
-              title="Building Architecture Video"
-              allow="autoplay; encrypted-media"
-              allowFullScreen
-            ></iframe>
-          </div>
-        </div>
-      )}
+      <HeroVideoModal
+        isOpen={isVideoOpen}
+        onClose={() => setIsVideoOpen(false)}
+      />
     </section>
   );
 }

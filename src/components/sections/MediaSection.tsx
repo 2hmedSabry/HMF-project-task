@@ -1,10 +1,9 @@
 'use client'
 import { useState } from "react";
 import { MEDIA_SECTION_CONTENT } from "@/constants/content/media";
-import Image from "next/image";
-import { AnimatedNav, AnimatedArrowLink } from "@/components/ui/animations";
-import { ArrowIcon } from "@/components/icons";
+import { AnimatedNav } from "@/components/ui/animations";
 import NavigationArrows from "@/components/ui/NavigationArrows";
+import MediaCard from "@/components/ui/cards/MediaCard";
 
 export default function MediaSection() {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -67,39 +66,11 @@ export default function MediaSection() {
             <div className="overflow-visible">
                 <div className="flex flex-row-reverse gap-8">
                     {/* Main Card (current) */}
-                    <div className="shrink-0 flex flex-row items-center bg-white rounded-[32px] w-full lg:w-[1028px] lg:h-[442px]">
-                        <div className={`w-[50%] flex flex-col p-8 gap-6 transition-opacity duration-300 ${isAnimating ? 'opacity-0' : 'opacity-100'}`}>
-                            <div className="flex flex-col gap-2">
-                                <h3 className="text-2xl font-bold">{currentCard.title}</h3>
-                                <p className="text-lg pb-2">{currentCard.description}</p>
-                            </div>
-                            <div className="flex flex-col gap-13">
-                                <AnimatedArrowLink href="/news" className="mb-3" icon={<ArrowIcon />} />
-                                <span className="px-4 py-1 rounded-full border-[0.8px] mb-3 w-[146px] h-[55px] flex items-center justify-center">{currentCard.tag}</span>
-                            </div>
-                        </div>
-                        <div className={`w-[50%] h-full transition-opacity duration-300 ${isAnimating ? 'opacity-0' : 'opacity-100'}`}>
-                            <Image src={currentCard.image} alt={currentCard.title} width={640} height={551} className="rounded-l-[32px] w-full h-full object-cover" />
-                        </div>
-                    </div>
+                    <MediaCard card={currentCard} isAnimating={isAnimating} />
 
                     {/* Preview Card (next) - only show if exists */}
                     {nextCard && (
-                        <div className="shrink-0 flex flex-row items-center bg-white rounded-[32px] w-[1028px] h-[442px]">
-                            <div className={`w-[50%] flex flex-col p-8 gap-6 transition-opacity duration-300 ${isAnimating ? 'opacity-0' : 'opacity-100'}`}>
-                                <div className="flex flex-col gap-2">
-                                    <h3 className="text-2xl font-bold">{nextCard.title}</h3>
-                                    <p className="text-lg pb-2">{nextCard.description}</p>
-                                </div>
-                                <div className="flex flex-col gap-13">
-                                    <AnimatedArrowLink href="/news" className="mb-3" />
-                                    <span className="px-4 py-1 rounded-full border-[0.8px] mb-3 w-[146px] h-[55px] flex items-center justify-center">{nextCard.tag}</span>
-                                </div>
-                            </div>
-                            <div className={`w-[50%] h-full transition-opacity duration-300 ${isAnimating ? 'opacity-0' : 'opacity-100'}`}>
-                                <Image src={nextCard.image} alt={nextCard.title} width={640} height={551} className="rounded-l-[32px] w-full h-full object-cover" />
-                            </div>
-                        </div>
+                        <MediaCard card={nextCard} isAnimating={isAnimating} />
                     )}
                 </div>
             </div>

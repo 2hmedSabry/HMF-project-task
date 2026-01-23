@@ -20,7 +20,7 @@ export default function AboutCard({
         <div
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
-            className={`group flex flex-row gap-0 rounded-lg mx-auto px-4 py-3 cursor-pointer transition-all duration-300 ease-in-out  ${index === 0
+            className={`group w-full flex flex-row gap-0 rounded-lg mx-auto px-4 py-3 cursor-pointer transition-all duration-300 ease-in-out  ${index === 0
                 ? isReversed
                     ? 'bg-white text-black'
                     : 'bg-black text-white'

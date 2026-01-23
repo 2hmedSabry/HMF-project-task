@@ -1,5 +1,5 @@
-import { NAV_LINKS } from "@/constants/navigation/navLinks";
-import { MailIcon, SearchIcon, WhatsAppHeaderIcon } from "@/components/icons";
+import { NAV_LINKS } from "@/constants";
+import HeaderActions from "@/components/ui/HeaderActions";
 
 interface MobileNavProps {
   isMobileMenuOpen: boolean;
@@ -19,7 +19,7 @@ export default function MobileNav({ isMobileMenuOpen }: MobileNavProps) {
                 href={link.href}
                 className="block px-4 py-3 text-base font-medium text-white/90 hover:text-white hover:bg-white/10 rounded-xl transition-all duration-300 text-right"
               >
-                {link.label}d
+                {link.label}
               </a>
             </li>
           ))}
@@ -28,31 +28,7 @@ export default function MobileNav({ isMobileMenuOpen }: MobileNavProps) {
         {/* Mobile Icons */}
 
 
-        <div className="flex items-center justify-center gap-4 mt-4 pt-4 border-t border-white/20">
-          <button
-            className="p-3 text-white/80 hover:text-amber-400 rounded-full hover:bg-white/10 transition-all duration-300 border border-white/20"
-            aria-label="Search"
-          >
-            <SearchIcon />
-          </button>
-          <a
-            href="https://wa.me/1234567890"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-3 text-white/80 hover:text-green-400 rounded-full hover:bg-white/10 transition-all duration-300 border border-white/20"
-            aria-label="WhatsApp"
-          >
-            <WhatsAppHeaderIcon
-            />
-          </a>
-          <a
-            href="mailto:info@example.com"
-            className="p-3 text-white/80 hover:text-blue-400 rounded-full hover:bg-white/10 transition-all duration-300 border border-white/20"
-            aria-label="Email"
-          >
-            <MailIcon />
-          </a>
-        </div>
+        <HeaderActions variant="mobile" />
 
 
 

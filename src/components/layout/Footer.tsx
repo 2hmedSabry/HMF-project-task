@@ -3,7 +3,6 @@ import { LogoIcon } from "@/components/icons"
 import { FOOTER_CONTENT } from "@/constants/content/footer"
 import Link from "next/link"
 import {
-    ChevronLeftIcon,
     LocationIcon,
     EmailIcon,
     PhoneIcon,
@@ -12,6 +11,7 @@ import {
 } from "@/components/icons"
 import { SlideUpAnimation } from "@/components/ui/animations"
 import { FaArrowLeft } from "react-icons/fa"
+import FooterLinkColumn from "@/components/ui/FooterLinkColumn"
 
 export default function Footer() {
 
@@ -72,22 +72,14 @@ export default function Footer() {
 
                 <div className="w-full lg:w-fit flex flex-col gap-13">
                     <div className="flex flex-col sm:flex-row justify-between gap-10 lg:gap-22">
-                        <div className="flex flex-col gap-4 py-2 text-xl">
-                            <span className="text-2xl font-bold">{FOOTER_CONTENT.quickLinks.title}</span>
-                            {FOOTER_CONTENT.quickLinks.links.map((link, index) => (
-                                <SlideUpAnimation>
-                                    <Link key={index} className="text-[#B2B2B2] flex items-center gap-3 pl-3 py-1" href={link.href}><ChevronLeftIcon /> {link.label}</Link>
-                                </SlideUpAnimation>
-                            ))}
-                        </div>
-                        <div className="flex flex-col gap-4 py-2 text-xl">
-                            <span className="text-2xl font-bold">{FOOTER_CONTENT.projects.title}</span>
-                            {FOOTER_CONTENT.projects.links.map((link, index) => (
-                                <SlideUpAnimation>
-                                    <Link key={index} className="text-[#B2B2B2] flex items-center gap-3 pl-3 py-1" href={link.href}><ChevronLeftIcon /> {link.label}</Link>
-                                </SlideUpAnimation>
-                            ))}
-                        </div>
+                        <FooterLinkColumn
+                            title={FOOTER_CONTENT.quickLinks.title}
+                            links={FOOTER_CONTENT.quickLinks.links}
+                        />
+                        <FooterLinkColumn
+                            title={FOOTER_CONTENT.projects.title}
+                            links={FOOTER_CONTENT.projects.links}
+                        />
                     </div>
                     <div className="flex flex-col gap-3">
                         <span className="text-2xl mb-1 font-bold p-1">تواصل معنا</span>

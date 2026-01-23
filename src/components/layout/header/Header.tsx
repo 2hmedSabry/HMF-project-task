@@ -2,12 +2,12 @@
 
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { LogoIcon, InitIcon, SearchIcon } from "@/components/icons";
-import { CONTACTS } from "@/constants/contact";
+import { LogoIcon, InitIcon } from "@/components/icons";
 import MobileNav from "./MobileNav";
 import Link from "next/link";
-import { Nav, Button } from "@/components/ui";
-import { AnimatedNav, FadeAnimation } from "@/components/ui/animations";
+import { Nav } from "@/components/ui";
+import { AnimatedNav } from "@/components/ui/animations";
+import HeaderActions from "@/components/ui/HeaderActions";
 import { NAV_LINKS } from "@/constants";
 
 
@@ -27,13 +27,13 @@ export default function Header() {
 
         {/* Part 2: Basic Navigation  */}
         <AnimatedNav
-              links={NAV_LINKS}
-              navClassName="lg:w-[872px]  h-16 hidden lg:flex"
-              linkClassName="px-4 py-4"
-              lineColor="bg-white"
-              lineWidth={30}
-              lineHeight="1.5px"
-            />
+          links={NAV_LINKS}
+          navClassName="lg:w-[872px]  h-16 hidden lg:flex"
+          linkClassName="px-4 py-4"
+          lineColor="bg-white"
+          lineWidth={30}
+          lineHeight="1.5px"
+        />
 
         {/* Part 3: Icons & Actions */}
         <Nav className="w-[255px] h-16">
@@ -51,30 +51,7 @@ export default function Header() {
 
           <span className="w-[2px] h-16 bg-white/50 hidden lg:block  " />
 
-          {/* Search Icon */}
-          <button
-            className="p-2 text-white/80"
-            aria-label="Search"
-          >
-            <FadeAnimation>
-              <SearchIcon />
-            </FadeAnimation>
-          </button>
-          {/* Contact Link - Icons */}
-          {CONTACTS.links.map((link, index) => (
-            <Link
-              key={index}
-              href={link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 text-white/80"
-              aria-label="WhatsApp"
-            >
-              <FadeAnimation>
-                {link.icon}
-              </FadeAnimation>
-            </Link>
-          ))}
+          <HeaderActions />
         </Nav>
       </div>
 
