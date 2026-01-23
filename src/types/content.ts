@@ -66,7 +66,7 @@ export interface NavLink {
 export interface ContactLink {
     href: string;
     label?: string;
-    icon?: ReactNode;
+    icon?: React.ComponentType;
     ariaLabel?: string;
 }
 

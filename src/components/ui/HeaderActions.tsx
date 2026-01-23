@@ -43,18 +43,21 @@ export default function HeaderActions({ variant = "desktop" }: HeaderActionsProp
             </button>
 
             {/* Contact Links from CONTACTS constant */}
-            {CONTACTS.links.map((link, index) => (
-                <Link
-                    key={index}
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`${iconClasses} ${getHoverClass(link.label)}`}
-                    aria-label={link.label}
-                >
-                    {wrapAnimation(link.icon)}
-                </Link>
-            ))}
+            {CONTACTS.links.map((link, index) => {
+                const Icon = link.icon;
+                return (
+                    <Link
+                        key={index}
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`${iconClasses} ${getHoverClass(link.label)}`}
+                        aria-label={link.label}
+                    >
+                        {wrapAnimation(Icon ? <Icon /> : null)}
+                    </Link>
+                );
+            })}
         </div>
     );
 }
