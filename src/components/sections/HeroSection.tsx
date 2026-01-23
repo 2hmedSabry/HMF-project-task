@@ -52,7 +52,7 @@ export default function HeroSection({ children }: { children: React.ReactNode })
           <div className="flex flex-col md:flex-row md:justify-between text-center md:text-right pt-20">
             <div className="w-full md:w-2/3 flex flex-col gap-8">
               <div>
-                <Typography variant="h1" className="mb-4">
+                <Typography variant="h1" className="mb-4 md:text-[32px]!">
                   {HERO_CONTENT.title}
                 </Typography>
                 <Typography variant="body" className="max-w-xl lg:max-w-4xl mx-auto md:mx-0">

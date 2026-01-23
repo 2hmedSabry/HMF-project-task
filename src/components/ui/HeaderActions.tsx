@@ -33,6 +33,7 @@ export default function HeaderActions({ variant = "desktop" }: HeaderActionsProp
 
     return (
         <div className={containerClasses}>
+
             {/* Search Icon */}
             <button
                 className={`${iconClasses} ${getHoverClass("search")}`}

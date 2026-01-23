@@ -36,7 +36,7 @@ export default function Header() {
         />
 
         {/* Part 3: Icons & Actions */}
-        <Nav className="w-[255px] h-16">
+        <Nav className="w-[255px] h-16  lg:justify-around!">
           <span className="lg:block hidden">
             <InitIcon />
           </span>
@@ -49,7 +49,7 @@ export default function Header() {
             {isMobileMenuOpen ? <X size={18} /> : <InitIcon />}
           </button>
 
-          <span className="w-[2px] h-16 bg-white/50 hidden lg:block  " />
+          <span className="w-[2px] h-16 bg-white/50 " />
 
           <HeaderActions />
         </Nav>
