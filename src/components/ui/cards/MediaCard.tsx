@@ -15,7 +15,7 @@ interface MediaCardProps {
 
 export default function MediaCard({ card, isAnimating }: MediaCardProps) {
     return (
-            <div className="lg:shrink-0 flex flex-col-reverse lg:flex-row items-center bg-white rounded-[32px] w-full lg:w-[1028px] md:w-[1280px] lg:h-[442px] xl:h-[551px] overflow-hidden ">
+            <div className="lg:shrink-0 flex flex-col-reverse lg:flex-row items-center bg-white rounded-[32px] w-full lg:w-[1028px] 2xl:w-[1280px] lg:h-[442px] xl:h-[551px] overflow-hidden ">
             <div className={`w-full lg:w-[50%] flex flex-col p-6 md:p-8 gap-6 transition-opacity duration-300 ${isAnimating ? 'opacity-0' : 'opacity-100'}`}>
                 <div className="flex flex-col gap-2">
                     <Typography variant="h3" className="line-clamp-2">{card.title}</Typography>
