@@ -17,6 +17,7 @@ interface NavLink {
     href: string;
     subLinks?: SubLink[];
     onClick?: () => void;
+    isActive?: boolean;
 }
 
 interface AnimatedNavProps {
@@ -51,8 +52,11 @@ export default function AnimatedNav({
     const navItemsRef = useRef<(HTMLAnchorElement | HTMLDivElement | null)[]>([]);
     const containerRef = useRef<HTMLDivElement>(null);
 
-    // Find active index based on current URL
-    const activeIndex = links.findIndex(link => link.href === pathname);
+    // Combine default link with passed links
+    const allLinks = [...(defaultField ? [{ label: defaultField, href: '/', subLinks: [] as SubLink[], isActive: false }] : []), ...links];
+
+    // Find active index: explicitly active prop takes precedence, then path match
+    const activeIndex = allLinks.findIndex(link => link.isActive ?? link.href === pathname);
     const finalActiveIndex = activeIndex !== -1 ? activeIndex : 0;
 
     const updateLine = useCallback((index: number) => {
@@ -109,7 +113,7 @@ export default function AnimatedNav({
             >
 
                 {/* Only add defaultField to links if it exists - onClick: undefined added to match NavLink type */}
-                {[...(defaultField ? [{ label: defaultField, href: '/', subLinks: [] as SubLink[], onClick: undefined }] : []), ...links].map((link, index) => {
+                {allLinks.map((link, index) => {
                     const hasSubLinks = link.subLinks && link.subLinks.length > 0;
 
                     return (

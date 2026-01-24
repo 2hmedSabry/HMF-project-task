@@ -9,8 +9,8 @@ import {
 export default function OurServices() {
     return (
         <Section id="ourServices" bg="bg-[#F7F6F6]">
-            <div className="w-full flex flex-col lg:flex-row justify-between gap-8 lg:gap-12">
-                <div>
+            <div className="w-full flex flex-col lg:flex-row items-start justify-between gap-8 lg:gap-12">
+                <div className="sticky top-32 h-fit">
                     <SectionHeader
                         title={SERVICES_CONTENT.title}
                         description={SERVICES_CONTENT.description}

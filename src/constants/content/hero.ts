@@ -32,7 +32,7 @@ export const HERO_SLIDES = [
     },
     {
         id: 3,
-        src: "/hero-backgroundN2.jpg",
+        src: "/about.jpg",
         projectName: "مشروع مجمع النسيم",
         content: {
             title: "رؤية مستقبلية مستدامة",
