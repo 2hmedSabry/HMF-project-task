@@ -1,15 +1,18 @@
 'use client'
 import { useState } from "react";
 import Image from "next/image";
-import { PlayIcon } from "@/components/icons";
 import { STATS } from "@/constants/status";
 import { HERO_CONTENT } from "@/constants/content/hero";
 import { MdOutlineKeyboardDoubleArrowLeft } from "react-icons/md";
-import { AnimatedButton, AutoWrittenText } from "@/components/ui/animations";
-import { Typography } from "@/components/ui";
-import HeroThumbnail from "@/components/ui/HeroThumbnail";
-import HeroStatsRow from "@/components/ui/HeroStatsRow";
-import HeroVideoModal from "@/components/ui/HeroVideoModal";
+import {
+  Typography,
+  HeroThumbnail,
+  HeroStatsRow,
+  HeroVideoModal,
+  AnimatedButton,
+  AutoWrittenText,
+  PlayIcon
+} from "@/components/ui";
 
 export default function HeroSection({ children }: { children: React.ReactNode }) {
   const [bgImage, setBgImage] = useState("/hero-backgroundN2.jpg");

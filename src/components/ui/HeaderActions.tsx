@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { SearchIcon } from "@/components/icons";
+import { SearchIcon } from "@/components/ui/icons";
 import { CONTACTS } from "@/constants/contact";
 import { FadeAnimation } from "@/components/ui/animations";
 

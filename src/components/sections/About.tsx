@@ -1,12 +1,14 @@
 'use client';
 
 import { useState } from "react";
-import Button from "@/components/ui/Button";
+import {
+    Section,
+    SectionHeader,
+    AboutCard
+} from "@/components/ui";
 import { ABOUT_CARDS, ABOUT_CONTENT } from "@/constants/content/about";
+import { THEME } from "@/constants/theme";
 import Image from "next/image";
-import { Section } from "@/components/ui";
-import SectionHeader from "@/components/ui/SectionHeader";
-import AboutCard from "@/components/ui/cards/AboutCard";
 
 
 export default function About() {

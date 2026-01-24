@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ChevronLeftIcon } from "@/components/icons";
+import { ChevronLeftIcon } from "@/components/ui/icons";
 import { SlideUpAnimation } from "@/components/ui/animations";
 import { NavLink } from "@/types/content";
 

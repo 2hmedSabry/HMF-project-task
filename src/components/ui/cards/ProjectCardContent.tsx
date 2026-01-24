@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { ProjectLocationIcon } from "@/components/icons"
+import { ProjectLocationIcon } from "@/components/ui/icons"
 import { AnimatedButton } from "@/components/ui/animations"
 import { MdOutlineKeyboardDoubleArrowLeft } from "react-icons/md"
 import { ProjectItem } from "@/types/content"

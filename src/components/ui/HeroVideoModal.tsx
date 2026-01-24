@@ -1,5 +1,6 @@
-import { X } from "lucide-react";
+"use client";
 import { useEffect } from "react";
+import { X } from "lucide-react";
 
 interface HeroVideoModalProps {
     isOpen: boolean;

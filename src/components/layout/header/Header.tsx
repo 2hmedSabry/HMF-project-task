@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { LogoIcon, InitIcon } from "@/components/icons";
+import { LogoIcon, InitIcon } from "@/components/ui/icons";
 import MobileNav from "./MobileNav";
 import Link from "next/link";
 import { Nav } from "@/components/ui";

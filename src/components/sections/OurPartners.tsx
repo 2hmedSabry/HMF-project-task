@@ -1,10 +1,12 @@
 "use client";
 
-import { Section } from "@/components/ui";
-import NavigationArrows from "@/components/ui/NavigationArrows";
 import { OUR_PARTNERS_CONTENT } from "@/constants/content/ourPartners";
-import SectionHeader from "@/components/ui/SectionHeader";
-import PartnerCard from "@/components/ui/cards/PartnerCard";
+import {
+    Section,
+    SectionHeader,
+    PartnerCard,
+    NavigationArrows
+} from "@/components/ui";
 
 export default function OurPartners() {
     return (

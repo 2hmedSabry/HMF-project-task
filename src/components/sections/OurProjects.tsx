@@ -2,8 +2,7 @@
 
 import { useState } from "react"
 import { OUR_PROJECTS_CONTENT } from "@/constants/content/ourProjects"
-import { AnimatedNav } from "@/components/ui/animations"
-import ProjectCardContent from "@/components/ui/cards/ProjectCardContent"
+import { ProjectCardContent, AnimatedNav } from "@/components/ui"
 
 export default function OurProjects() {
     const [selectedIndex, setSelectedIndex] = useState(0);

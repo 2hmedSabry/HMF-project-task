@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Typography } from "@/components/ui";
 import { SlideUpAnimation } from "@/components/ui/animations";
-import { LocationIcon, FooterArrowIcon, EmailIcon, PhoneIcon } from "@/components/icons";
+import { LocationIcon, FooterArrowIcon, EmailIcon, PhoneIcon } from "@/components/ui/icons";
 import { FOOTER_CONTENT } from "@/constants/content/footer";
 
 export default function FooterContactSection() {

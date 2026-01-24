@@ -1,12 +1,9 @@
-import { AnimatedButton } from "@/components/ui/animations"
-import { Section } from "@/components/ui"
-import Button from "@/components/ui/Button"
-import Tag from "@/components/ui/Tag"
-import { SERVICES_CONTENT, SERVICES_CARDS } from "@/constants/content/services"
-import Image from "next/image"
-import { MdOutlineKeyboardDoubleArrowLeft } from "react-icons/md"
-import SectionHeader from "@/components/ui/SectionHeader"
-import ServiceCard from "@/components/ui/cards/ServiceCard"
+import { SERVICES_CONTENT, SERVICES_CARDS } from "@/constants/content/services";
+import {
+    Section,
+    SectionHeader,
+    ServiceCard,
+} from "@/components/ui";
 
 
 export default function OurServices() {

@@ -1,4 +1,4 @@
-import { FirstIcon, SecondIcon, ThirdIcon } from "@/components/icons";
+import { FirstIcon, SecondIcon, ThirdIcon } from "@/components/ui/icons";
 import { BaseSectionContent, SectionWithCta, AboutCard } from "@/types/content";
 
 export const ABOUT_CONTENT: SectionWithCta = {

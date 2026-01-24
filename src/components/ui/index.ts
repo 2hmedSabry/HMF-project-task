@@ -1,7 +1,16 @@
 export * from './animations';
+export * from './cards';
+export * from './icons';
 export { default as Button } from './Button';
 export { default as Nav } from './Nav';
 export { default as NavigationArrows } from './NavigationArrows';
 export { default as Tag } from './Tag';
 export { default as Section } from './Section';
 export { default as Typography } from './Typography';
+export { default as SectionHeader } from './SectionHeader';
+export { default as HeroStatsRow } from './HeroStatsRow';
+export { default as HeroThumbnail } from './HeroThumbnail';
+export { default as HeroVideoModal } from './HeroVideoModal';
+export { default as FooterLinkColumn } from './FooterLinkColumn';
+export { default as FooterSocialLinks } from './FooterSocialLinks';
+export { default as FooterContactSection } from './FooterContactSection';

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { AnimatedArrowLink } from "@/components/ui/animations";
-import { ArrowIcon } from "@/components/icons";
+import { ArrowIcon } from "@/components/ui/icons";
 import { Typography } from "@/components/ui";
 
 interface MediaCardProps {

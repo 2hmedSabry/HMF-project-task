@@ -1,4 +1,4 @@
-import { MailIcon, WhatsAppHeaderIcon, WhatsAppIcon, YoutubeIcon, InstagramIcon, FacebookIcon } from "@/components/icons";
+import { MailIcon, WhatsAppHeaderIcon, WhatsAppIcon, YoutubeIcon, InstagramIcon, FacebookIcon } from "@/components/ui/icons";
 
 export const CONTACTS = {
   // this for header 

@@ -1,37 +1,21 @@
 'use client'
-import { useState } from "react";
 import { MEDIA_SECTION_CONTENT } from "@/constants/content/media";
-import { AnimatedNav } from "@/components/ui/animations";
-import NavigationArrows from "@/components/ui/NavigationArrows";
-import MediaCard from "@/components/ui/cards/MediaCard";
-import { Typography } from "@/components/ui";
+import {
+    Typography,
+    NavigationArrows,
+    MediaCard,
+    AnimatedNav
+} from "@/components/ui";
+import { useSlider } from "@/hooks/useSlider";
 
 export default function MediaSection() {
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const [isAnimating, setIsAnimating] = useState(false);
     const totalCards = MEDIA_SECTION_CONTENT.cards.length;
-
-    const handlePrevious = () => {
-        if (!isAnimating) {
-            setIsAnimating(true);
-            setTimeout(() => {
-                // Loop to last card when at first
-                setCurrentIndex(currentIndex === 0 ? totalCards - 1 : currentIndex - 1);
-                setIsAnimating(false);
-            }, 300);
-        }
-    };
-
-    const handleNext = () => {
-        if (!isAnimating) {
-            setIsAnimating(true);
-            setTimeout(() => {
-                // Loop to first card when at last
-                setCurrentIndex(currentIndex === totalCards - 1 ? 0 : currentIndex + 1);
-                setIsAnimating(false);
-            }, 300);
-        }
-    };
+    const {
+        currentIndex,
+        isAnimating,
+        goToNext,
+        goToPrevious
+    } = useSlider({ totalItems: totalCards });
 
     // Get the two visible cards (current and next with loop)
     const currentCard = MEDIA_SECTION_CONTENT.cards[currentIndex];
@@ -81,8 +65,8 @@ export default function MediaSection() {
             {/* Navigation Buttons */}
             <div className="flex justify-end">
                 <NavigationArrows
-                    onPrevious={handlePrevious}
-                    onNext={handleNext}
+                    onPrevious={goToPrevious}
+                    onNext={goToNext}
                     isAtStart={currentIndex === 0}
                     isAtEnd={currentIndex === totalCards - 1}
                 />
