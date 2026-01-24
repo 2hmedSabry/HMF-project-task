@@ -5,7 +5,7 @@ import {
   OurPartners,
   OurProjects,
   OurServices
-} from "@/components/sections";
+} from "@/sections";
 import Header from "@/components/layout/header/Header";
 import Footer from "@/components/layout/Footer";
 

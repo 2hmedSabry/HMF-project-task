@@ -2,12 +2,10 @@
 
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { LogoIcon, InitIcon } from "@/components/ui/icons";
-import MobileNav from "./MobileNav";
-import Link from "next/link";
-import { Nav } from "@/components/ui";
-import { AnimatedNav } from "@/components/ui/animations";
+import { LogoIcon, InitIcon, Nav, AnimatedNav } from "@/components/ui";
 import HeaderActions from "@/components/ui/HeaderActions";
+import Link from "next/link";
+import MobileNav from "./MobileNav";
 import { NAV_LINKS } from "@/constants";
 
 

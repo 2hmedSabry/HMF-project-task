@@ -1,14 +1,16 @@
-import { Button } from "@/components/ui"
-import { LogoIcon } from "@/components/ui/icons"
+import {
+    Button,
+    LogoIcon,
+    FooterArrowIcon,
+    SlideUpAnimation,
+    Typography,
+    FooterLinkColumn,
+    FooterSocialLinks,
+    FooterContactSection
+} from "@/components/ui";
 import { FOOTER_CONTENT } from "@/constants/content/footer"
 import Link from "next/link"
-import { FooterArrowIcon } from "@/components/ui/icons"
-import { SlideUpAnimation } from "@/components/ui/animations"
 import { FaArrowLeft } from "react-icons/fa"
-import { Typography } from "@/components/ui"
-import FooterLinkColumn from "@/components/ui/FooterLinkColumn"
-import FooterSocialLinks from "@/components/ui/FooterSocialLinks"
-import FooterContactSection from "@/components/ui/FooterContactSection"
 
 export default function Footer() {
 
