@@ -18,6 +18,7 @@ export default function HeroThumbnail({ src, isActive, onClick }: HeroThumbnailP
                 width={200}
                 height={156}
                 style={{ height: 'auto' }}
+                sizes="200px"
                 className="rounded-xl"
             />
         </div>

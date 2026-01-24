@@ -14,6 +14,7 @@ export default function PartnerCard({ partner }: PartnerCardProps) {
                     src={partner.image}
                     width={300}
                     height={300}
+                    sizes="300px"
                     alt={partner.alt}
                     className="mb-4 brightness-0 invert"
                 />
@@ -25,6 +26,7 @@ export default function PartnerCard({ partner }: PartnerCardProps) {
                     src={partner.image}
                     width={410}
                     height={410}
+                    sizes="410px"
                     alt={partner.alt}
                     className="brightness-0"
                 />

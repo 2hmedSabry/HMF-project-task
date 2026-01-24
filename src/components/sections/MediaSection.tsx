@@ -67,7 +67,7 @@ export default function MediaSection() {
             </div>
             {/* Cards container - shows 2 cards with fade effect */}
             <div className="overflow-visible">
-                <div className="flex flex-row-reverse gap-8 lg:gap-12">
+                <div className="flex flex-col lg:flex-row-reverse gap-8 lg:gap-12">
                     {/* Main Card (current) */}
                     <MediaCard card={currentCard} isAnimating={isAnimating} />
 

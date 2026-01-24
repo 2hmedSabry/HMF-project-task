@@ -19,6 +19,7 @@ export default function ProjectCardContent({ project }: ProjectCardContentProps)
                         alt="flag"
                         width={150}
                         height={100}
+                        sizes="150px"
                         className="opacity-50 w-[150px] h-[100px] object-cover"
                     />
                     <Typography variant="body" as="span" className="flex flex-row items-center gap-1 font-bold">
@@ -44,6 +45,7 @@ export default function ProjectCardContent({ project }: ProjectCardContentProps)
                     alt="project"
                     width={640}
                     height={551}
+                    sizes="(max-width: 1024px) 100vw, 640px"
                     className="lg:rounded-[32px] w-[640px] h-[551px] object-cover"
                 />
             </div>

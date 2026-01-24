@@ -43,8 +43,10 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-navigation"
             className="lg:hidden p-[2px]  text-white/80 hover:text-white border border-white/30 rounded-lg hover:border-white/50 hover:bg-white/10 transition-all duration-300"
-            aria-label="Toggle menu"
+            aria-label={isMobileMenuOpen ? "إغلاق القائمة" : "فتح القائمة"}
           >
             {isMobileMenuOpen ? <X size={18} /> : <InitIcon />}
           </button>
@@ -56,7 +58,7 @@ export default function Header() {
       </div>
 
       {/* Mobile Navigation */}
-      <MobileNav isMobileMenuOpen={isMobileMenuOpen} />
+      <MobileNav isMobileMenuOpen={isMobileMenuOpen} id="mobile-navigation" />
     </header>
   );
 }

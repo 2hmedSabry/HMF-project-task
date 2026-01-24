@@ -31,7 +31,7 @@ export default function ServiceCard({ service, index }: ServiceCardProps) {
                     src={service.image}
                     alt={service.title}
                     fill
-                    sizes="(max-width: 768px) 100vw, 394px"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="rounded-sm object-cover scale-110 transition-transform duration-500 ease-in-out group-hover:scale-100"
                 />
             </div>

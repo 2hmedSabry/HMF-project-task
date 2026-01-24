@@ -37,7 +37,7 @@ export default function HeaderActions({ variant = "desktop" }: HeaderActionsProp
             {/* Search Icon */}
             <button
                 className={`${iconClasses} ${getHoverClass("search")}`}
-                aria-label="Search"
+                aria-label="البحث في الموقع"
             >
                 {wrapAnimation(<SearchIcon />)}
             </button>
@@ -45,14 +45,15 @@ export default function HeaderActions({ variant = "desktop" }: HeaderActionsProp
             {/* Contact Links from CONTACTS constant */}
             {CONTACTS.links.map((link, index) => {
                 const Icon = link.icon;
+                const ariaLabel = link.label === "واتساب" ? "تواصل عبر واتساب" : "تواصل عبر البريد الإلكتروني";
                 return (
                     <Link
                         key={index}
                         href={link.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`${iconClasses} ${getHoverClass(link.label)}`}
-                        aria-label={link.label}
+                        className={`${iconClasses} ${getHoverClass(link.label || "")}`}
+                        aria-label={ariaLabel}
                     >
                         {wrapAnimation(Icon ? <Icon /> : null)}
                     </Link>
