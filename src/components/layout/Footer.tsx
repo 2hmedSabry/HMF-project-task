@@ -2,17 +2,13 @@ import { Button } from "@/components/ui"
 import { LogoIcon } from "@/components/icons"
 import { FOOTER_CONTENT } from "@/constants/content/footer"
 import Link from "next/link"
-import {
-    LocationIcon,
-    EmailIcon,
-    PhoneIcon,
-    AboutArrowIcon,
-    FooterArrowIcon
-} from "@/components/icons"
+import { FooterArrowIcon } from "@/components/icons"
 import { SlideUpAnimation } from "@/components/ui/animations"
 import { FaArrowLeft } from "react-icons/fa"
 import { Typography } from "@/components/ui"
 import FooterLinkColumn from "@/components/ui/FooterLinkColumn"
+import FooterSocialLinks from "@/components/ui/FooterSocialLinks"
+import FooterContactSection from "@/components/ui/FooterContactSection"
 
 export default function Footer() {
 
@@ -38,25 +34,7 @@ export default function Footer() {
                             </Link>
                         </SlideUpAnimation>
 
-                        <div className="group/social flex flex-row justify-between gap-5 w-fit px-3">
-                            {FOOTER_CONTENT.socialLinks.map((social, index) => {
-                                const Icon = social.icon;
-                                return (
-                                    <Link
-                                        key={index}
-                                        href={social.href}
-                                        target="_blank"
-                                        className="p-1 transition-all duration-300 
-                                            group-hover/social:opacity-50 group-hover/social:translate-x-[4px] group-hover/social:translate-y-[4px]
-                                            hover:opacity-100! hover:translate-x-[3px]! hover:translate-y-[4px]! hover:scale-120
-                                            focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-full"
-                                        aria-label={social.ariaLabel}
-                                    >
-                                        {Icon && <Icon />}
-                                    </Link>
-                                );
-                            })}
-                        </div>
+                        <FooterSocialLinks links={FOOTER_CONTENT.socialLinks} />
                     </div>
                     <div className="flex flex-col gap-6">
                         <Typography variant="body" className="font-bold">
@@ -98,33 +76,7 @@ export default function Footer() {
                             links={FOOTER_CONTENT.projects.links}
                         />
                     </div>
-                    <div className="flex flex-col gap-3">
-                        <Typography variant="h3" className="mb-1 p-1">تواصل معنا</Typography>
-                        <span className="inline-flex items-center gap-1 ">
-                            <LocationIcon />
-                            {FOOTER_CONTENT.contact.address}
-                        </span>
-                        <SlideUpAnimation>
-                            <Link href={FOOTER_CONTENT.contact.directionsLink || "#"} className="inline-flex items-center p-2 gap-1 mr-12 text-[#B2B2B2] hover:text-white transition-colors">
-                                <Typography variant="body" className="font-bold">
-                                    {FOOTER_CONTENT.contact.directionsText}
-                                </Typography>
-                                <FooterArrowIcon />
-                            </Link>
-                        </SlideUpAnimation>
-                        <SlideUpAnimation>
-                            <Link href={FOOTER_CONTENT.contact.emailLink || "#"} className="inline-flex items-center p-2 gap-3 text-[#B2B2B2] transition-colors">
-                                <EmailIcon />
-                                {FOOTER_CONTENT.contact.email}
-                            </Link>
-                        </SlideUpAnimation>
-                        <SlideUpAnimation>
-                            <Link href={FOOTER_CONTENT.contact.phoneLink || "#"} className="inline-flex items-center p-2 flex-row-reverse gap-3 text-[#B2B2B2] transition-colors  " dir="ltr">
-                                <PhoneIcon />
-                                {FOOTER_CONTENT.contact.phone}
-                            </Link>
-                        </SlideUpAnimation>
-                    </div>
+                    <FooterContactSection />
                 </div>
             </div>
         </footer>

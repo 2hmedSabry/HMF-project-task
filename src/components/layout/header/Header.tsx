@@ -49,7 +49,7 @@ export default function Header() {
             {isMobileMenuOpen ? <X size={18} /> : <InitIcon />}
           </button>
 
-          <span className="w-[2px] h-16 bg-white/50 " />
+          <span className="w-[2px] h-16 bg-white/50 block " />
 
           <HeaderActions />
         </Nav>
