@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { SEO_CONFIG } from "@/constants/seo";
+import SmoothScrolling from "@/components/ui/SmoothScrolling";
 
 const jannaLT = localFont({
   src: [
@@ -121,8 +122,11 @@ export default function RootLayout({
         >
           الانتقال إلى المحتوى الرئيسي
         </a>
+
         <main id="main-content">
-          {children}
+          <SmoothScrolling>
+            {children}
+          </SmoothScrolling>
         </main>
       </body>
     </html>

@@ -11,7 +11,7 @@ interface AnimatedButtonProps {
     height?: string;
 }
 
-export default function AnimatedButton({ href, text, icon, className = "" , width = "270px", height = "56px" }: AnimatedButtonProps) {
+export default function AnimatedButton({ href, text, icon, className = "", width = "270px", height = "56px" }: AnimatedButtonProps) {
     return (
         <Link
             href={href}
