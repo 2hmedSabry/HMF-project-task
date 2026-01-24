@@ -18,7 +18,7 @@ export default function OurPartners() {
                     textColor="text-black"
                 />
             </div>
-            <div className="flex">
+            <div className="flex flex-col md:flex-row">
                 {OUR_PARTNERS_CONTENT.partners.map((partner) => (
                     <PartnerCard key={partner.id} partner={partner} />
                 ))}
