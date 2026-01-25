@@ -60,7 +60,7 @@ export default function HeaderActions({ variant = "desktop", color = "white" }: 
                         className={`${iconClasses} ${getHoverClass(link.label || "")}`}
                         aria-label={ariaLabel}
                     >
-                        {wrapAnimation(Icon ? <Icon /> : null)}
+                        {wrapAnimation(Icon ? <Icon {...({ color: isMobile ? "white" : color } as any)} /> : null)}
                         {/* Icons usually inherit current color, so className text-color handles it */}
                     </Link>
                 );

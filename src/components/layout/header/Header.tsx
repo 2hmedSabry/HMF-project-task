@@ -1,63 +1,80 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { LogoIcon, InitIcon, Nav, AnimatedNav } from "@/components/ui";
 import HeaderActions from "@/components/ui/HeaderActions";
 import Link from "next/link";
 import MobileNav from "./MobileNav";
 import { NAV_LINKS } from "@/constants";
+import HeaderRight from "./HeaderRight";
 
 
 
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header className="relative z-50 mx-auto py-2">
-      <div className="flex items-center justify-between gap-8">
-        {/* Part 1: Logo */}
-        <Link href="/" aria-label="الصفحة الرئيسية - حسن محمد فقيه للاستشارات الهندسية"
-        >
-          <LogoIcon />
-        </Link>
-
-        {/* Part 2: Basic Navigation  */}
-        <AnimatedNav
-          links={NAV_LINKS}
-          navClassName="lg:w-[872px]  h-16 hidden lg:flex"
-          linkClassName="px-4 py-4"
-          lineColor="bg-white"
-          lineWidth={30}
-          lineHeight="1.5px"
-        />
-
-        {/* Part 3: Icons & Actions */}
-        <Nav className="w-full lg:w-[255px] h-16  lg:justify-around!">
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-expanded={isMobileMenuOpen}
-            aria-controls="mobile-navigation"
-            className="p-[2px]  text-white/80 hover:text-white border border-white/30 rounded-lg hover:border-white/50 hover:bg-white/10 transition-all duration-300"
-            aria-label={isMobileMenuOpen ? "إغلاق القائمة" : "فتح القائمة"}
+    <>
+      <header className="relative z-50 mx-auto py-2">
+        <div className="flex items-center justify-between gap-8">
+          {/* Part 1: Logo */}
+          <Link href="/" aria-label="الصفحة الرئيسية - حسن محمد فقيه للاستشارات الهندسية"
           >
-            <InitIcon isOpen={isMobileMenuOpen} />
-          </button>
+            <LogoIcon />
+          </Link>
 
-          <span className="w-[2px] h-16 bg-white/50 block " />
+          {/* Part 2: Basic Navigation  */}
+          <AnimatedNav
+            links={NAV_LINKS}
+            navClassName="lg:w-[872px]  h-16 hidden lg:flex"
+            linkClassName="px-4 py-4"
+            lineColor="bg-white"
+            lineWidth={30}
+            lineHeight="1.5px"
+          />
 
-          <HeaderActions />
-        </Nav>
+          {/* Part 3: Icons & Actions */}
+          <HeaderRight
+            isMobileMenuOpen={isMobileMenuOpen}
+            setIsMobileMenuOpen={setIsMobileMenuOpen}
+            className={`transition-opacity duration-300 ${isScrolled ? "opacity-0 pointer-events-none" : "opacity-100"}`}
+          />
+        </div>
+
+        {/* Mobile Navigation */}
+        <MobileNav
+          isMobileMenuOpen={isMobileMenuOpen}
+          onClose={() => setIsMobileMenuOpen(false)}
+          id="mobile-navigation"
+        />
+      </header>
+
+      {/* Floating HeaderRight on Scroll */}
+      <div
+        className={`fixed top-6 left-4 lg:left-12 z-50 transition-all duration-500 ease-in-out ${isScrolled
+          ? "opacity-100 translate-y-0"
+          : "opacity-0 -translate-y-full pointer-events-none"
+          }`}
+      >
+        <HeaderRight
+          isMobileMenuOpen={isMobileMenuOpen}
+          setIsMobileMenuOpen={setIsMobileMenuOpen}
+          color="black"
+          className="bg-white/90 backdrop-blur-md border border-black/5 shadow-lg"
+        />
       </div>
-
-      {/* Mobile Navigation */}
-      <MobileNav
-        isMobileMenuOpen={isMobileMenuOpen}
-        onClose={() => setIsMobileMenuOpen(false)}
-        id="mobile-navigation"
-      />
-    </header>
+    </>
   );
 }
