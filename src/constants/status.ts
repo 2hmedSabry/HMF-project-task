@@ -1,6 +1,7 @@
 export const STATS = [
-  { label: "سنوات الخبرة", value: 10 },
-  { label: "الموظفين", value: 100 },
-  { label: "المشاريع", value: 190 },
-  { label: "العملاء", value: 1000 },
+  { label: "Years of Experience", value: 10 },
+  { label: "Employees", value: 100 },
+  { label: "Projects", value: 190 },
+  { label: "Clients", value: 1000 },
 ];
+

@@ -38,7 +38,7 @@ export default function HeroVideoModal({ isOpen, onClose }: HeroVideoModalProps)
             <button
                 onClick={onClose}
                 className="absolute top-8 right-8 z-110 p-4 text-white/50 hover:text-white transition-colors"
-                aria-label="إغلاق"
+                aria-label="Close"
             >
                 <X size={48} strokeWidth={1} />
             </button>

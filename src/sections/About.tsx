@@ -31,13 +31,14 @@ export default function About() {
                 </div>
                 <div className="md:w-1/2 p-5 relative ">
                     <div className="absolute top-[10px] left-[10px] w-[43%] h-[56.3%] border-[2.57px] border-black -z-10" />
-                    <Image src="/about.jpg" alt="عن الشركة" width={600} height={600} style={{ height: 'auto' }} sizes="(max-width: 768px) 100vw, 600px" className="rounded-[5.14px] w-full " />
+                    <Image src="/about.jpg" alt="About the company" width={600} height={600} style={{ height: 'auto' }} sizes="(max-width: 768px) 100vw, 600px" className="rounded-[5.14px] w-full " />
                     <div className="" >
                         <div className="absolute bottom-[15px] right-[15px] w-[140px] h-[108px] rounded-[5.14px] border-[6.43px] border-white overflow-hidden">
-                            <Image src="/hero-backgroundN2.jpg" alt="صورة المشروع" fill sizes="140px" className="object-cover" />
+                            <Image src="/hero-backgroundN2.jpg" alt="Project image" fill sizes="140px" className="object-cover" />
                         </div>
                     </div>
                 </div>
+
             </div>
 
 

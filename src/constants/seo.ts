@@ -1,20 +1,19 @@
 export const SEO_CONFIG = {
-    title: "مكتب حسن محمد فقيه للاستشارات الهندسية | HMF Consulting Engineers",
-    description: "نقدم مجموعة متكاملة من الخدمات الهندسية تشمل التصميم المعماري، الإشراف الهندسي، وإدارة المشاريع في منطقة الباحة وخارجها بأعلى معايير الجودة.",
+    title: "Hassan Mohammed Faqih Office for Engineering Consultations | HMF Consulting Engineers",
+    description: "We provide a comprehensive range of engineering services including architectural design, engineering supervision, and project management in Al-Baha region and beyond with the highest quality standards.",
     keywords: [
-        "استشارات هندسية",
-        "تصميم معماري",
-        "إشراف هندسي",
-        "إدارة مشاريع",
-        "الباحة",
-        "حسن محمد فقيه",
-        "HMF Consulting",
-        "Engineering Bahrain",
+        "Engineering Consultations",
         "Architectural Design",
+        "Engineering Supervision",
+        "Project Management",
+        "Al-Baha",
+        "Hassan Mohammed Faqih",
+        "HMF Consulting",
+        "Engineering Saudi Arabia",
     ],
     url: "https://hmf-engineers.com", // Replace with actual URL if known
     siteName: "HMF Consulting Engineers",
-    locale: "ar_SA",
+    locale: "en_US",
     type: "website",
     twitter: {
         handle: "@hmfaqih",
@@ -22,3 +21,4 @@ export const SEO_CONFIG = {
         cardType: "summary_large_image",
     },
 };
+

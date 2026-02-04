@@ -12,8 +12,8 @@ interface ProjectCardContentProps {
 export default function ProjectCardContent({ project }: ProjectCardContentProps) {
     return (
         <>
-            <div className="lg:w-[50%] w-full flex flex-col px-4 lg:px-0 lg:pr-[32px] gap-5">
-                <div className="flex flex-row-reverse lg:flex-row pt-2 items-center justify-between mb-0 md:mb-3 text-lg font-bold lg:contents">
+            <div className="lg:w-[50%] w-full flex flex-col px-4 lg:px-0 lg:pl-[32px] gap-5">
+                <div className="flex flex-row lg:flex-row pt-2 items-center justify-between mb-0 md:mb-3 text-lg font-bold lg:contents">
                     <Image
                         src={project.flag}
                         alt="flag"
@@ -24,20 +24,21 @@ export default function ProjectCardContent({ project }: ProjectCardContentProps)
                     />
                     <Typography variant="body" as="span" className="flex flex-row items-center gap-1 font-bold">
                         <ProjectLocationIcon />
-                        مدينة {project.city}
+                        {project.city} City
                     </Typography>
                 </div>
                 <Typography variant="h3">{project.projectName}</Typography>
-                <Typography variant="body" className="lg:pb-8 sm:w-[528px] sm:h-[132px]">
+                <Typography variant="body" className="lg:pb-8 sm:w-[528px] sm:h-[132px] mb-12">
                     {project.description}
                 </Typography>
 
                 <AnimatedButton
                     href={project.ctaLink}
                     text={project.cta}
-                    icon={<MdOutlineKeyboardDoubleArrowLeft size={24} />}
+                    icon={<MdOutlineKeyboardDoubleArrowLeft size={24} className="rotate-180" />}
                     className="flex items-center justify-center gap-2 px-black text-white bg-black rounded-[12px] text-center font-bold text-[18px]"
                 />
+
             </div>
             <div className="lg:w-[50%] w-full">
                 <Image

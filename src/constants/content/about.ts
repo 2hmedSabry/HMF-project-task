@@ -2,27 +2,27 @@ import { FirstIcon, SecondIcon, ThirdIcon } from "@/components/ui/icons";
 import { BaseSectionContent, SectionWithCta, AboutCard } from "@/types/content";
 
 export const ABOUT_CONTENT: SectionWithCta = {
-    title: "معلومات عنا",
-    description: "عن شركة <br/>حسن فقيه للاستشارات الهندسية",
-    description2: "متخصصة في تقديم الخدمات الفنية والهندسية للمشاريع والبنى التحتية منذ عام 2010. نعمل على توفير حلول مبتكرة تضمن نجاح المشاريع وتلبي احتياجات عملائنا من الجهات الحكومية والخاصة بكفاءة واحترافية، بدعم من فريق متمرس يستخدم أحدث التقنيات ويطبق أعلى المعايير العالمية.",
-    cta: "شاهد المزيد",
+    title: "About Us",
+    description: "About <br/>Hassan Mohammed Faqih Engineering Consultations",
+    description2: "Specialized in providing technical and engineering services for projects and infrastructure since 2010. We work on providing innovative solutions that ensure project success and meet the needs of our clients from both government and private sectors with efficiency and professionalism, supported by an experienced team using the latest technologies and applying the highest international standards.",
+    cta: "View More",
     ctaLink: "/about",
 };
 
 export const ABOUT_CARDS: AboutCard[] = [
     {
-        title: "حلول هندسية متكاملة",
-        description: "تصميم وإدارة مشاريع البنية التحتية بمختلف أنواعها، من الدراسات الأولية حتى التنفيذ والإشراف.",
+        title: "Integrated Engineering Solutions",
+        description: "Designing and managing infrastructure projects of various types, from initial studies to execution and supervision.",
         icon: FirstIcon,
     },
     {
-        title: "استشارات فنية متخصصة",
-        description: "تقديم دراسات وتحاليل فنية وهيدرولوجية وجيولوجية تدعم اتخاذ القرار وتضمن سلامة المشروع.",
+        title: "Specialized Technical Consultations",
+        description: "Providing technical, hydrological, and geological studies and analyses that support decision-making and ensure project safety.",
         icon: SecondIcon,
     },
     {
-        title: "فريق عمل مؤهل",
-        description: "نخبة من المهندسين والخبراء يقدمون حلولًا مبتكرة ومستدامة باستخدام أفضل التقنيات والممارسات العالمية.",
+        title: "Qualified Team",
+        description: "A selection of engineers and experts providing innovative and sustainable solutions using the best international technologies and practices.",
         icon: ThirdIcon,
     },
 ];

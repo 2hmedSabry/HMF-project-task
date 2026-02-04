@@ -11,43 +11,43 @@ export const FOOTER_CONTENT: {
     copyright: { text: string; developer: string };
 } = {
     about: {
-        description: "في مكتب حسن محمد فقيه للاستشارات الهندسية، نقدم سنوات من الخبرة في تقديم الحلول الهندسية المتكاملة، من الدراسات والتصاميم إلى الإشراف والتنفيذ.",
-        ctaText: "المزيد عنا",
+        description: "At Hassan Mohammed Faqih Office for Engineering Consultations, we offer years of experience in providing integrated engineering solutions, from studies and designs to supervision and execution.",
+        ctaText: "More About Us",
         ctaLink: "/about"
     },
     newsletter: {
-        title: "اشترك في القائمة البريدية لدينا",
-        placeholder: "البريد الالكتروني",
-        disclaimer: "سيتم الحفاظ على سرية عنوان بريدك الإلكتروني ولن يتم استخدامه إلا لإرسال النشرة الإخبارية أو الرد على أي استفسارات."
+        title: "Subscribe to Our Newsletter",
+        placeholder: "Email Address",
+        disclaimer: "Your email address will be kept confidential and will only be used to send the newsletter or respond to any inquiries."
     },
     socialLinks: CONTACTS.socialLinks,
     quickLinks: {
-        title: "روابط سريعة",
+        title: "Quick Links",
         links: [
-            { label: "الصفحه الرئيسية", href: "/" },
-            { label: "من نحن", href: "/about" },
-            { label: "مشاريعنا", href: "/projects" },
-            { label: "خدماتنا", href: "/services" },
-            { label: "الوظائف", href: "/careers" },
-            { label: "المدونة", href: "/blog" },
-            { label: "اتصل بنا", href: "/contact" }
+            { label: "Home", href: "/" },
+            { label: "About Us", href: "/about" },
+            { label: "Our Projects", href: "/projects" },
+            { label: "Our Services", href: "/services" },
+            { label: "Careers", href: "/careers" },
+            { label: "Blog", href: "/blog" },
+            { label: "Contact Us", href: "/contact" }
         ]
     },
     projects: {
-        title: "مشاريعنا",
+        title: "Our Projects",
         links: [
-            { label: "مدينة جيزان", href: "/projects/jazan" },
-            { label: "الضاحية الجنوبية", href: "/projects/south" },
-            { label: "الكورنيش الجنوبى", href: "/projects/corniche" },
-            { label: "حى الخالديه", href: "/projects/khalidiya" },
-            { label: "شاطئ الشقيق", href: "/projects/shaqiq" },
-            { label: "شاطئ جزيرة المرجان", href: "/projects/marjan" },
-            { label: "سوق البلد", href: "/projects/souq" }
+            { label: "Jazan City", href: "/projects/jazan" },
+            { label: "South Suburb", href: "/projects/south" },
+            { label: "South Corniche", href: "/projects/corniche" },
+            { label: "Al-Khalidiya District", href: "/projects/khalidiya" },
+            { label: "Al-Shaqiq Beach", href: "/projects/shaqiq" },
+            { label: "Coral Island Beach", href: "/projects/marjan" },
+            { label: "Souq Al-Balad", href: "/projects/souq" }
         ]
     },
     contact: {
-        address: "جازان - حي الصفا - شارع الملك فيصل",
-        directionsText: "الحصول على الاتجاهات",
+        address: "Jazan - Safa District - King Faisal Street",
+        directionsText: "Get Directions",
         directionsLink: "https://maps.google.com",
         email: "info@hmfaqih.com",
         emailLink: "mailto:info@hmfaqih.com",
@@ -56,8 +56,9 @@ export const FOOTER_CONTENT: {
         phoneLink: "tel:+966505933440"
     },
     copyright: {
-        text: "حقوق النشر محفوظة لشركة حسن محمد فقيه للاستشارات الهندسية © 2025",
-        developer: "تم تطويره بواسطة AL Master"
+        text: "All rights reserved to Hassan Mohammed Faqih Engineering Consultations © 2025",
+        developer: "Developed by AL Master"
     },
 
 }
+

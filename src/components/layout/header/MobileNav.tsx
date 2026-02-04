@@ -27,17 +27,17 @@ export default function MobileNav({ isMobileMenuOpen, onClose, id }: MobileNavPr
       {isMobileMenuOpen && (
         <motion.div
           id={id}
-          initial={{ opacity: 0, x: "100%" }}
+          initial={{ opacity: 0, x: "-100%" }}
           animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: "100%" }}
+          exit={{ opacity: 0, x: "-100%" }}
           transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
           className="fixed inset-0 z-100 h-screen w-screen bg-black/95 backdrop-blur-2xl flex flex-col"
-          dir="rtl"
+          dir="ltr"
         >
           {/* Header Area */}
           <div className="flex items-center justify-between px-6 py-8 border-b border-white/10">
             <Link href="/" onClick={onClose}>
-              <div className="scale-75 origin-right">
+              <div className="scale-75 origin-left">
                 <LogoIcon />
               </div>
             </Link>
@@ -119,14 +119,14 @@ export default function MobileNav({ isMobileMenuOpen, onClose, id }: MobileNavPr
 
             {/* Quick Contact Info */}
             <div className="space-y-6 pt-6 border-t border-white/10">
-              <h3 className="text-white/40 text-sm font-medium tracking-widest uppercase">تواصل مباشر</h3>
+              <h3 className="text-white/40 text-sm font-medium tracking-widest uppercase">Direct Contact</h3>
               <div className="space-y-5">
                 <a href={contact.phoneLink} className="flex items-center gap-4 group">
                   <div className="p-3 bg-white/5 rounded-xl text-white/40 group-hover:text-white group-hover:bg-white/10 transition-all">
                     <Phone size={20} />
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-white/40 text-xs">اتصل بنا</span>
+                    <span className="text-white/40 text-xs">Call Us</span>
                     <span className="text-white font-medium" dir="ltr">{contact.phone}</span>
                   </div>
                 </a>
@@ -136,7 +136,7 @@ export default function MobileNav({ isMobileMenuOpen, onClose, id }: MobileNavPr
                     <Mail size={20} />
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-white/40 text-xs">البريد الإلكتروني</span>
+                    <span className="text-white/40 text-xs">Email</span>
                     <span className="text-white font-medium">{contact.email}</span>
                   </div>
                 </a>
@@ -146,7 +146,7 @@ export default function MobileNav({ isMobileMenuOpen, onClose, id }: MobileNavPr
                     <MapPin size={20} />
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-white/40 text-xs">الموقع</span>
+                    <span className="text-white/40 text-xs">Location</span>
                     <span className="text-white font-medium text-sm leading-relaxed">{contact.address}</span>
                   </div>
                 </div>

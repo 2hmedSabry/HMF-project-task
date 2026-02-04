@@ -89,7 +89,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ar" dir="rtl">
+    <html lang="en" dir="ltr">
       <body className={`${jannaLT.className} antialiased bg-[#F7F6F6]`}>
         {/* Structured Data for SEO */}
         <script
@@ -106,7 +106,7 @@ export default function RootLayout({
                 "telephone": "+966-505-933-440", // Using the number from Footer
                 "contactType": "customer service",
                 "areaServed": "SA",
-                "availableLanguage": ["Arabic"]
+                "availableLanguage": ["English", "Arabic"]
               },
               "sameAs": [
                 "https://www.facebook.com/hmfaqih",
@@ -118,10 +118,11 @@ export default function RootLayout({
         />
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:right-4 focus:z-50 focus:bg-black focus:text-white focus:p-4 focus:rounded-md"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-black focus:text-white focus:p-4 focus:rounded-md"
         >
-          الانتقال إلى المحتوى الرئيسي
+          Skip to main content
         </a>
+
 
         <main id="main-content">
           <SmoothScrolling>

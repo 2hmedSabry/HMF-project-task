@@ -1,36 +1,37 @@
 import { BaseSectionContent, MediaCard, NavLink } from "@/types/content";
 
 export const MEDIA_SECTION_CONTENT: { title: string; list: NavLink[]; cards: MediaCard[] } = {
-    title: "الاخبار &<br/> أنشطتنا وفعالياتنا",
+    title: "News &<br/> Activities and Events",
     list: [
         {
-            label: "الأخبار",
+            label: "News",
             href: "/news"
         },
         {
-            label: "أنشطتنا وفعالياتنا",
+            label: "Activities and Events",
             href: "/events"
         }
     ],
     cards: [{
-        title: "مكتب فقيه يوقع عقدًا استشاريًا مع جامعة الإمام عبدالرحمن بن فيصل",
-        description: "MIP تعلن توقيعها عقد شراكة مع مكتب فقيه للاستشارات الهندسية لتقديم خدمات استشارية في التخطيط الحضري والإقليمي لهيئة تطوير المنطقة الشرقية.",
+        title: "Faqih Office signs a consulting contract with Imam Abdulrahman bin Faisal University",
+        description: "MIP announces its partnership with Faqih Office for Engineering Consultations to provide urban and regional planning consulting services to the Eastern Province Development Authority.",
         image: "/mediaSection/1.jpg",
-        tag: "شركة"
+        tag: "Company"
     }, {
-        title: "ورشة عمل ميدانية لطالبات التصميم الداخلي في جازان",
-        description: "نظم مكتب فقيه زيارة ميدانية لطالبات كلية العمارة والتصميم بجامعة جازان لعرض تفاصيل مشاريع المكتب وتعريفهن بإجراءات التصميم والإشراف الهندسي.",
+        title: "Field workshop for Interior Design students in Jazan",
+        description: "Faqih Office organized a field visit for students of the College of Architecture and Design at Jazan University to present the details of the office's projects and introduce them to design and engineering supervision procedures.",
         image: "/mediaSection/2.jpg",
-        tag: "تعليمي"
+        tag: "Educational"
     }, {
-        title: "ورشة عمل ميدانية لطالبات التصميم الداخلي في جازان",
-        description: "نظم مكتب فقيه زيارة ميدانية لطالبات كلية العمارة والتصميم بجامعة جازان لعرض تفاصيل مشاريع المكتب وتعريفهن بإجراءات التصميم والإشراف الهندسي.",
+        title: "Field workshop for Interior Design students in Jazan",
+        description: "Faqih Office organized a field visit for students of the College of Architecture and Design at Jazan University to present the details of the office's projects and introduce them to design and engineering supervision procedures.",
         image: "/mediaSection/1.jpg",
-        tag: "تعليمي"
+        tag: "Educational"
     }, {
-        title: "ورشة عمل ميدانية لطالبات التصميم الداخلي في جازان",
-        description: "نظم مكتب فقيه زيارة ميدانية لطالبات كلية العمارة والتصميم بجامعة جازان لعرض تفاصيل مشاريع المكتب وتعريفهن بإجراءات التصميم والإشراف الهندسي.",
+        title: "Field workshop for Interior Design students in Jazan",
+        description: "Faqih Office organized a field visit for students of the College of Architecture and Design at Jazan University to present the details of the office's projects and introduce them to design and engineering supervision procedures.",
         image: "/mediaSection/4.png",
-        tag: "تعليمي"
+        tag: "Educational"
     }]
 }
+

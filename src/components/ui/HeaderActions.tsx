@@ -25,8 +25,8 @@ export default function HeaderActions({ variant = "desktop", color = "white" }: 
     const getHoverClass = (id: string) => {
         if (!isMobile) return "";
         if (id === "search") return "hover:text-amber-400";
-        if (id === "واتساب") return "hover:text-green-400";
-        if (id === "البريد الإلكتروني") return "hover:text-blue-400";
+        if (id === "WhatsApp") return "hover:text-green-400";
+        if (id === "Email") return "hover:text-blue-400";
         return "";
     };
 
@@ -41,7 +41,7 @@ export default function HeaderActions({ variant = "desktop", color = "white" }: 
             {/* Search Icon */}
             <button
                 className={`${iconClasses} ${getHoverClass("search")}`}
-                aria-label="البحث في الموقع"
+                aria-label="Search the site"
             >
                 {wrapAnimation(<SearchIcon color={isMobile ? "white" : color} />)}
                 {/* Note: SearchIcon might need color prop update too if it doesn't support currentColor */}
@@ -50,7 +50,7 @@ export default function HeaderActions({ variant = "desktop", color = "white" }: 
             {/* Contact Links from CONTACTS constant */}
             {CONTACTS.links.map((link, index) => {
                 const Icon = link.icon;
-                const ariaLabel = link.label === "واتساب" ? "تواصل عبر واتساب" : "تواصل عبر البريد الإلكتروني";
+                const ariaLabel = link.label === "WhatsApp" ? "Contact via WhatsApp" : "Contact via Email";
                 return (
                     <Link
                         key={index}
@@ -60,6 +60,7 @@ export default function HeaderActions({ variant = "desktop", color = "white" }: 
                         className={`${iconClasses} ${getHoverClass(link.label || "")}`}
                         aria-label={ariaLabel}
                     >
+
                         {wrapAnimation(Icon ? <Icon {...({ color: isMobile ? "white" : color } as any)} /> : null)}
                         {/* Icons usually inherit current color, so className text-color handles it */}
                     </Link>

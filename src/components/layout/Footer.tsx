@@ -10,7 +10,8 @@ import {
 } from "@/components/ui";
 import { FOOTER_CONTENT } from "@/constants/content/footer"
 import Link from "next/link"
-import { FaArrowLeft } from "react-icons/fa"
+import { FaArrowRight } from "react-icons/fa"
+
 
 export default function Footer() {
 
@@ -47,11 +48,12 @@ export default function Footer() {
                                 id="newsletter-email"
                                 className="bg-white text-black w-full lg:w-[530px] h-full p-5 rounded-[81.04px]"
                                 type="email"
-                                placeholder="البريد الالكتروني"
-                                aria-label="البريد الالكتروني للاشتراك في النشرة البريدية"
+                                placeholder="Email Address"
+                                aria-label="Email address for newsletter subscription"
                             />
-                            <Button href="/" className="absolute left-[1%] lg:left-[14%] top-[-11px] w-[117px] h-[60px] bg-black text-white rounded-[81.04px] hover:scale-90 transition-all duration-300" icon={<FaArrowLeft size={20} />} aria-label="اشتراك في النشرة البريدية" />
+                            <Button href="/" className="absolute right-[1%] lg:right-[22%] top-[-11px] w-[117px] h-[60px] bg-black text-white rounded-[81.04px] hover:scale-90 transition-all duration-300" icon={<FaArrowRight size={20} />} aria-label="Subscribe to newsletter" />
                         </div>
+
                         <Typography variant="body-small" className="text-[#B2B2B2] w-full lg:w-[439px]">
                             {FOOTER_CONTENT.newsletter.disclaimer}
                         </Typography>

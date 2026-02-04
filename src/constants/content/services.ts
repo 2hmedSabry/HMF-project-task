@@ -1,10 +1,10 @@
 import { BaseSectionContent, SectionWithCta, ServiceCard } from "@/types/content";
 
 export const SERVICES_CONTENT: SectionWithCta = {
-    title: "خدماتنا",
-    description: "خدماتنا الهندسية<br/>المتكاملة",
-    description2: "نقدّم خدمات فنية واستشارية متكاملة تغطي مراحل المشاريع من الدراسات والتصميم حتى الإشراف والتنفيذ، وفق أعلى معايير الجودة والسلامة.",
-    cta: "شاهد المزيد",
+    title: "Our Services",
+    description: "Our Integrated<br/>Engineering Services",
+    description2: "We provide integrated technical and consulting services covering project stages from studies and design to supervision and execution, according to the highest quality and safety standards.",
+    cta: "View More",
     ctaLink: "/",
 }
 
@@ -13,31 +13,32 @@ export const SERVICES_CONTENT: SectionWithCta = {
 export const SERVICES_CARDS: ServiceCard[] = [
 
     {
-        title: "التخطيط العمراني",
-        description: " نقدّم خدمات فنية واستشارية متكاملة تغطي مراحل المشاريع من الدراسات والتصميم حتى الإشراف والتنفيذ، وفق أعلى معايير الجودة والسلامة. في شركة الفقيه، نؤمن أن التخطيط ",
+        title: "Urban Planning",
+        description: "We provide integrated technical and consulting services covering project stages from studies and design to supervision and execution, according to the highest quality and safety standards. At Faqih Company, we believe that planning...",
         image: "/ourServices/urban-planning.jpg",
     },
     {
-        title: "التصاميم المعمارية",
-        description: "في مكتب فقيه، لا نقدم مجرد تصميمات نقدّم خدمات فنية واستشارية متكاملة تغطي مراحل المشاريع من الدراسات والتصميم حتى الإشراف والتنفيذ، وفق أعلى معايير الجودة والسلامة. ",
+        title: "Architectural Designs",
+        description: "At Faqih Office, we don't just provide designs; we offer integrated technical and consulting services covering project stages from studies and design to supervision and execution, according to the highest quality and safety standards.",
         image: "/ourServices/architectural-design.jpg",
     },
     {
-        title: "منصة احكام",
-        description: "منصة إحكام هي بوابة إلكترونية أُنشئت نقدّم خدمات فنية واستشارية متكاملة تغطي مراحل المشاريع من الدراسات والتصميم حتى الإشراف والتنفيذ، وفق أعلى معايير الجودة والسلامة.",
+        title: "Ahkam Platform",
+        description: "Ahkam platform is an electronic portal established to provide integrated technical and consulting services covering project stages from studies and design to supervision and execution, according to the highest quality and safety standards.",
         image: "/ourServices/ahkam-platform.jpg",
     },
     {
-        title: "تقارير ومخططات السلامة",
-        description: "في شركة الفقيه، نُقدّم تقارير ومخططات نقدّم خدمات فنية واستشارية متكاملة تغطي مراحل المشاريع من الدراسات والتصميم حتى الإشراف والتنفيذ، وفق أعلى معايير الجودة والسلامة.",
+        title: "Safety Reports and Plans",
+        description: "At Faqih Company, we offer reports and plans, providing integrated technical and consulting services covering project stages from studies and design to supervision and execution, according to the highest quality and safety standards.",
         image: "/ourServices/safety-reports.jpg",
     }, {
-        title: "أعمال مساحية",
-        description: "في شركة الفقيه، نقدم خدمات مساحية نقدّم خدمات فنية واستشارية متكاملة تغطي مراحل المشاريع من الدراسات والتصميم حتى الإشراف والتنفيذ، وفق أعلى معايير الجودة والسلامة.",
+        title: "Surveying Works",
+        description: "At Faqih Company, we provide surveying services, offering integrated technical and consulting services covering project stages from studies and design to supervision and execution, according to the highest quality and safety standards.",
         image: "/ourServices/surveying-works.jpg",
     }, {
-        title: 'اداره المشاريع',
-        description: "في شركة الفقيه، نقدم خدمات إدارة المشاريع نقدّم خدمات فنية واستشارية متكاملة تغطي مراحل المشاريع من الدراسات والتصميم حتى الإشراف والتنفيذ، وفق أعلى معايير الجودة والسلامة.",
+        title: 'Project Management',
+        description: "At Faqih Company, we provide project management services, offering integrated technical and consulting services covering project stages from studies and design to supervision and execution, according to the highest quality and safety standards.",
         image: "/ourServices/project-management.jpg",
     }
 ]
+

@@ -40,7 +40,7 @@ export default function HeroSection({ children }: { children: React.ReactNode })
   };
 
   return (
-    <section className="relative min-h-screen pt-2 pb-10 lg:h-[1005px] overflow-hidden" dir="rtl">
+    <section className="relative min-h-screen pt-2 pb-10 lg:h-[1005px] overflow-hidden" dir="ltr">
       <AnimatePresence mode="popLayout" initial={false}>
         <motion.div
           key={activeSlide.id}
@@ -79,20 +79,20 @@ export default function HeroSection({ children }: { children: React.ReactNode })
             >
               <button
                 onClick={() => setIsVideoOpen(true)}
-                aria-label="تشغيل الفيديو"
+                aria-label="Play Video"
                 className="w-26 h-16 rounded-[100px] border border-white/50  flex items-center justify-center hover:bg-white/10 transition-colors group"
               >
                 <PlayIcon />
               </button>
               <Typography variant="h3" as="span" className="min-w-[150px]">
                 <AutoWrittenText
-                  text="تشغيل الفيديو"
+                  text="Play Video"
                 />
               </Typography>
             </div>
 
             {/* Main Content */}
-            <div className="flex flex-col md:flex-row md:justify-between text-center md:text-right pt-20">
+            <div className="flex flex-col md:flex-row md:justify-between text-center md:text-left pt-20">
               <div
                 className="w-full md:w-2/3 flex flex-col gap-8 h-[300px]"
               >
@@ -117,7 +117,7 @@ export default function HeroSection({ children }: { children: React.ReactNode })
                       <HeroButton
                         href={activeSlide.content.ctaLink}
                         text={activeSlide.content.cta}
-                        icon={<MdOutlineKeyboardDoubleArrowLeft size={24} />}
+                        icon={<MdOutlineKeyboardDoubleArrowLeft size={24} className="rotate-180" />}
                         className="text-black bg-white  text-[18px]"
                       />
                     </div>

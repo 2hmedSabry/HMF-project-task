@@ -1,27 +1,28 @@
 import { PartnerItem } from "@/types/content";
 
 export const OUR_PARTNERS_CONTENT: { title: string; subtitle: string; description: string; partners: PartnerItem[] } = {
-    title: "شركائنا",
-    subtitle: "شركاؤنا في النجاح",
-    description: "نفخر بتعاوننا مع مؤسسات وشركات رائدة تشاركنا التزامنا بالجودة والابتكار والتميز. معًا، نبني قيمة مستدامة ونُنجز مشاريع ناجحة في مختلف القطاعات.",
+    title: "Our Partners",
+    subtitle: "Our Partners in Success",
+    description: "We are proud of our collaboration with leading organizations and companies that share our commitment to quality, innovation, and excellence. Together, we build sustainable value and achieve successful projects across various sectors.",
     partners: [
         {
             id: 1,
             image: "/ourPartners/ourPartners1.png",
-            alt: "شريك 1",
-            description: "نقدّم خدمات فنية واستشارية متكاملة تغطي مراحل المشاريع من الدراسات والتصميم حتى الإشراف والتنفيذ، وفق أعلى معايير الجودة والسلامة."
+            alt: "Partner 1",
+            description: "We provide integrated technical and specialized consulting services covering project stages from study and design to supervision and execution, according to the highest quality and safety standards."
         },
         {
             id: 2,
             image: "/ourPartners/ourPartners2.png",
-            alt: "شريك 2",
-            description: "شركة متخصصة في التصميم المعماري والتخطيط العمراني"
+            alt: "Partner 2",
+            description: "Company specialized in architectural design and urban planning."
         },
         {
             id: 3,
             image: "/ourPartners/ourPartners3.png",
-            alt: "شريك 3",
-            description: "مؤسسة متميزة في إدارة المشاريع والإشراف الهندسي"
+            alt: "Partner 3",
+            description: "Leading organization in project management and engineering supervision."
         }
     ]
 };
+

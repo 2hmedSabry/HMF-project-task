@@ -1,9 +1,9 @@
 import { SectionWithCta } from "@/types/content";
 
 export const HERO_CONTENT: SectionWithCta = {
-    title: " نحو مستقبل عمراني متكامل",
-    description: "نقدم في مكتب حسن محمد فقيه للاستشارات الهندسية مجموعة متكاملة من الخدمات الهندسية تشمل التصميم المعماري، الإشراف الهندسي، وإدارة المشاريع، مع التزام كامل بتطبيق أعلى معايير الجودة والابتكار. نعمل على تنفيذ المشاريع في منطقة الباحة وخارجها بكفاءة عالية، ونسعى دائمًا إلى تقديم حلول مخصصة تلبي تطلعات عملائنا وتسهم في تحسين البنية التحتية وتحقيق التنمية المستدامة.",
-    cta: "من نحن",
+    title: "Towards an Integrated Urban Future",
+    description: "At Hassan Mohammed Faqih Office for Engineering Consultations, we provide a comprehensive range of engineering services including architectural design, engineering supervision, and project management, with a full commitment to applying the highest standards of quality and innovation. We work on executing projects in Al-Baha region and beyond with high efficiency, always striving to provide customized solutions that meet our clients' aspirations and contribute to improving infrastructure and achieving sustainable development.",
+    cta: "About Us",
     ctaLink: "/about",
 };
 
@@ -11,7 +11,7 @@ export const HERO_SLIDES = [
     {
         id: 1,
         src: "/hero-backgroundN2.jpg",
-        projectName: "مشروع فيلا الباحة",
+        projectName: "Al-Baha Villa Project",
         content: {
             title: HERO_CONTENT.title,
             description: HERO_CONTENT.description,
@@ -22,23 +22,24 @@ export const HERO_SLIDES = [
     {
         id: 2,
         src: "/hero-backgroundN1.jpg",
-        projectName: "مشروع برج العليا",
+        projectName: "Al-Olaya Tower Project",
         content: {
-            title: "تصاميم عصرية ومبتكرة",
-            description: "نبتكر مساحات تعكس التطور والحداثة، مع مراعاة الهوية الثقافية والبيئية للمنطقة، لنقدم لكم تجربة معمارية فريدة.",
-            cta: "مشاريعنا",
+            title: "Modern and Innovative Designs",
+            description: "We innovate spaces that reflect development and modernity, taking into account the cultural and environmental identity of the region, to provide you with a unique architectural experience.",
+            cta: "Our Projects",
             ctaLink: "/projects"
         }
     },
     {
         id: 3,
         src: "/about.jpg",
-        projectName: "مشروع مجمع النسيم",
+        projectName: "Al-Naseem Complex Project",
         content: {
-            title: "رؤية مستقبلية مستدامة",
-            description: "نسعى جاهدين لتحقيق التميز في كل مشروع، من الفكرة الأولية حتى التسليم النهائي، مع التركيز على الاستدامة والجودة.",
-            cta: "تواصل معنا",
+            title: "Sustainable Future Vision",
+            description: "We strive to achieve excellence in every project, from the initial idea to the final delivery, with a focus on sustainability and quality.",
+            cta: "Contact Us",
             ctaLink: "/contact"
         }
     },
 ];
+

@@ -41,7 +41,7 @@ export default function AnimatedNav({
     lineColor = "bg-white",
     lineWidth = 30,
     lineHeight = "1.5px",
-    dir = "rtl",
+    dir = "ltr",
     textColor = "text-white",
     navBorderColor = "border border-white/50",
 }: AnimatedNavProps) {
@@ -104,7 +104,7 @@ export default function AnimatedNav({
             }}
             borderColor={navBorderColor}
             className={`flex items-center rounded-[100px] 
-            px-3 relative h-16 ${navClassName}`}
+            px-5 relative h-16 ${navClassName}`}
             dir={dir}
         >
             <div
@@ -147,7 +147,7 @@ export default function AnimatedNav({
                             {/* Dropdown Menu */}
                             {hasSubLinks && (
                                 <div
-                                    className={`absolute top-full right-0 mt-2 py-4  border border-white/20 rounded-2xl shadow-2xl min-w-[240px] transition-all duration-300 z-50
+                                    className={`absolute top-full left-0 mt-2 py-4  border border-white/20 rounded-2xl shadow-2xl min-w-[240px] transition-all duration-300 z-50
                                         ${openDropdown === index ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-4 pointer-events-none'}`}
                                 >
                                     <div className="flex flex-col gap-1 px-2">
@@ -155,7 +155,7 @@ export default function AnimatedNav({
                                             <Link
                                                 key={sIdx}
                                                 href={sub.href}
-                                                className="px-4 py-3 rounded-xl text-white hover:bg-white/10 transition-all text-sm font-medium border-r-2 border-transparent hover:border-white"
+                                                className="px-4 py-3 rounded-xl text-white hover:bg-white/10 transition-all text-sm font-medium border-l-2 border-transparent hover:border-white"
                                             >
                                                 {sub.label}
                                             </Link>
